@@ -2,9 +2,10 @@ backend:
   name: turbo-github
   turbo_site_id: a5d18cb4-c968-4432-b0ab-5f917339519c
   branch: main
+
 media_folder: "assets/uploads"
-media_library:
-  name: default
+public_folder: "/assets/uploads"
+
 collections:
   - name: catalogo
     label: Catálogo
