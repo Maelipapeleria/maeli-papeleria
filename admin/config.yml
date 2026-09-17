@@ -1,0 +1,22 @@
+backend:
+  name: turbo-github
+  branch: main
+
+collections:
+  - name: catalogo
+    label: Catálogo
+    files:
+      - name: productos
+        label: Productos
+        file: data/products.json
+        fields:
+          - label: Productos
+            name: products
+            widget: list
+            fields:
+              - { label: ID, name: id, widget: string }
+              - { label: Nombre, name: name, widget: string }
+              - { label: Categoría, name: category, widget: string }
+              - { label: Precio, name: price, widget: number }
+              - { label: Descripción, name: desc, widget: text }
+              - { label: Imagen, name: image, widget: image, required: false }
