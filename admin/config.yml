@@ -3,6 +3,8 @@ backend:
   turbo_site_id: a5d18cb4-c968-4432-b0ab-5f917339519c
   branch: main
 media_folder: "assets/uploads"
+media_library:
+  name: default
 collections:
   - name: catalogo
     label: Catálogo
