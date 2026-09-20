@@ -30,7 +30,7 @@
       "category": "Agendas",
       "price": 10000,
       "desc": "100 hojas.",
-      "image": ""
+      "image": "/assets/uploads/rrrrr.jpeg"
     },
     {
       "id": "agenda-pediatrica",
@@ -39,6 +39,14 @@
       "price": 13000,
       "desc": "Personalizada. \n- Agenda control niño sano Cesfam\n- Agenda control Particular",
       "image": "/assets/uploads/gfgfg.jpeg"
+    },
+    {
+      "id": "agenda-pediatrica-renovacion",
+      "name": "Agenda Pediatrica Renovacion de datos ",
+      "category": "Agendas personalizadas",
+      "price": 15990,
+      "desc": " Carnet pediátrico con restauración de datos: restauramos y traspasamos los datos del carnet original e incluye:\n* Hojas adicionales para controles médicos\n* Sobres/bolsillos para guardar documentos y papeles\n* Hoja de stickers\n* Separadores de hojas\n* Diseño personalizado",
+      "image": "/assets/uploads/uiuiu.jpeg"
     },
     {
       "id": "agenda-profesional",
@@ -479,14 +487,6 @@
       "price": 5000,
       "desc": "Letrero personalizado para puerta o negocio.",
       "image": "data:image/jpeg;base64,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"
-    },
-    {
-      "id": "agenda-pediatrica-renovacion",
-      "name": "Agenda Pëdiatrica Renovacion de datos ",
-      "category": "agendas personalizadas",
-      "price": 15990,
-      "desc": " Carnet pediátrico con restauración de datos: restauramos y traspasamos los datos del carnet original e incluye:\n* Hojas adicionales para controles médicos\n* Sobres/bolsillos para guardar documentos y papeles\n* Hoja de stickers\n* Separadores de hojas\n* Diseño personalizado",
-      "image": "/assets/uploads/uiuiu.jpeg"
     }
   ]
 }
