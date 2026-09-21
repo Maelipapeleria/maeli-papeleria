@@ -24,3 +24,20 @@ collections:
               - { label: Precio, name: price, widget: number }
               - { label: Descripción, name: desc, widget: text }
               - { label: Imagen, name: image, widget: image, required: false }
+          - label: Extras de agenda
+            name: agendaExtras
+            widget: list
+            fields:
+              - { label: ID, name: id, widget: string }
+              - { label: Nombre, name: name, widget: string }
+              - { label: Precio adicional, name: price, widget: number }
+              - { label: Descripción, name: desc, widget: text }
+          - label: “Quizás te interese agregar…”
+            name: upsells
+            widget: list
+            fields:
+              - { label: ID, name: id, widget: string }
+              - { label: Nombre, name: name, widget: string }
+              - { label: Precio, name: price, widget: number }
+              - { label: Descripción, name: desc, widget: text }
+              - { label: Ícono, name: icon, widget: string, required: false }
