@@ -1,0 +1,28 @@
+{
+  "celebrations": [
+    {
+      "id": "halloween",
+      "name": "Halloween",
+      "active": true,
+      "banner": "/assets/uploads/celebraciones-halloween.png",
+      "title": "¡Halloween llegó a MAELI! 👻",
+      "subtitle": "Kits personalizados para celebrar de miedo",
+      "button": "VER KITS →",
+      "products": [
+        "mini-toppers-5",
+        "mini-toppers-10",
+        "mini-toppers-20"
+      ]
+    },
+    {
+      "id": "navidad",
+      "name": "Navidad",
+      "active": false,
+      "banner": "/assets/uploads/celebraciones-navidad.png",
+      "title": "¡Navidad llegó a MAELI! 🎄",
+      "subtitle": "Kits personalizados para celebrar",
+      "button": "VER KITS →",
+      "products": []
+    }
+  ]
+}
