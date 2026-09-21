@@ -32,6 +32,28 @@ collections:
               - { label: Nombre, name: name, widget: string }
               - { label: Precio adicional, name: price, widget: number }
               - { label: Descripción, name: desc, widget: text }
+
+      - name: celebraciones
+        label: Celebraciones
+        file: data/celebrations.json
+        fields:
+          - label: Celebraciones
+            name: celebrations
+            widget: list
+            fields:
+              - { label: ID, name: id, widget: string }
+              - { label: Nombre, name: name, widget: string }
+              - { label: Activa, name: active, widget: boolean, default: false }
+              - { label: Banner, name: banner, widget: image, required: false }
+              - { label: Título, name: title, widget: string }
+              - { label: Subtítulo, name: subtitle, widget: string }
+              - { label: Texto del botón, name: button, widget: string }
+              - label: Productos del catálogo
+                name: products
+                widget: list
+                required: false
+                field: { label: ID del producto, name: id, widget: string }
+
           - label: “Quizás te interese agregar…”
             name: upsells
             widget: list
