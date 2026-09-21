@@ -1,0 +1,44 @@
+name: Actualizar encabezado MAELI
+
+on:
+  push:
+    paths:
+      - '.github/workflows/actualizar-encabezado.yml'
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Agregar descripción de ubicación
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path("index.html")
+          s=p.read_text(encoding="utf-8")
+          css="""
+          .locationTag{position:absolute;right:108px;top:50%;transform:translateY(-50%);color:#111;font-family:"Trebuchet MS",Arial,sans-serif;font-size:12px;line-height:1.35;text-align:right;font-weight:600;letter-spacing:.1px;max-width:330px}
+          .locationTag span{display:block}
+          @media(max-width:760px){.locationTag{position:static;transform:none;max-width:none;text-align:center;margin:4px 0 0;font-size:10px}}
+          """
+          if ".locationTag{" not in s:
+              pos=s.find("</style>")
+              if pos==-1: raise SystemExit("No se encontró </style>")
+              s=s[:pos]+css+s[pos:]
+          html='<div class="locationTag" aria-label="Información de MAELI Papelería"><span>Papelería personalizada de la V Región✨📍 · Villa Alemana, Chile 🇨🇱</span><span>Envíos a todo Chile🚚📦</span></div>'
+          if 'class="locationTag"' not in s:
+              pos=s.find("</header>")
+              if pos==-1: raise SystemExit("No se encontró </header>")
+              s=s[:pos]+html+s[pos:]
+          p.write_text(s,encoding="utf-8")
+          PY
+      - name: Guardar cambios
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "SEO/UI: add MAELI location and shipping description"
+          git push
