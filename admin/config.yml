@@ -24,6 +24,8 @@ collections:
               - { label: Precio, name: price, widget: number }
               - { label: Descripción, name: desc, widget: text }
               - { label: Imagen, name: image, widget: image, required: false }
+              - { label: Grupo de cantidad, name: groupId, widget: string, required: false }
+              - { label: Cantidad del grupo, name: quantity, widget: number, required: false }
           - label: Extras de agenda
             name: agendaExtras
             widget: list
