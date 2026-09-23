@@ -104,6 +104,16 @@ collections:
               - { label: Título de productos destacados, name: newArrivalsTitle, widget: string }
               - { label: Cantidad de productos destacados, name: newArrivalsLimit, widget: number, value_type: int, min: 1, max: 20 }
               - { label: Mostrar productos destacados, name: showNewArrivals, widget: boolean, default: true }
+              - label: Productos nuevos de la portada
+                name: homeNewProducts
+                widget: list
+                max: 8
+                required: false
+                fields:
+                  - { label: Nombre del producto, name: title, widget: string }
+                  - { label: Imagen del producto, name: image, widget: image, required: false }
+                  - { label: Precio, name: price, widget: number, required: false }
+                  - { label: Destino, name: target, widget: string, required: false, hint: "Opcional. Usa catalogo para llevar al catálogo." }
 
               - label: Sección de categorías de portada
                 name: categorySection
