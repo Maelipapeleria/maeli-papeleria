@@ -67,6 +67,23 @@ collections:
               - { label: Descripción, name: desc, widget: text }
               - { label: Ícono, name: icon, widget: string, required: false }
 
+  - name: nuevos
+    label: 🆕 Productos nuevos
+    files:
+      - name: portada
+        label: Productos nuevos de portada
+        file: data/home-new-products.json
+        fields:
+          - label: Productos nuevos
+            name: products
+            widget: list
+            max: 8
+            fields:
+              - { label: Nombre del producto, name: title, widget: string }
+              - { label: Imagen, name: image, widget: image, required: false }
+              - { label: Precio, name: price, widget: number, required: false }
+              - { label: Destino, name: target, widget: string, required: false, hint: "Opcional. Usa catalogo." }
+
   - name: faq
     label: Preguntas frecuentes
     files:
