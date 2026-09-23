@@ -106,13 +106,28 @@ main{width:100%;margin:0;padding:24px 24px 50px}.sectionHead{display:flex;justif
 @media(max-width:600px){
   .homeCategoryCard,.homeCategoryCard img{min-height:220px}
 }
+</style><style>
+/* Logo original también en el encabezado y categorías de portada grandes */
+.head .logo{justify-content:center}
+.head .logo img{max-width:260px}
+.homeCategoryGrid{max-width:1200px}
+.homeCategoryCard{min-height:280px}
+.homeCategoryCard img{min-height:280px}
+@media(max-width:950px){
+ .homeCategoryCard,.homeCategoryCard img{min-height:240px}
+ .head .logo img{max-width:210px;height:60px}
+}
+@media(max-width:600px){
+ .homeCategoryCard,.homeCategoryCard img{min-height:220px}
+ .head .logo img{max-width:180px;height:52px}
+}
 </style></head>
 <body>
 <div class="top"><span>🚚 Envíos a todo Chile</span><span>|</span><span>Diseño · Impresión · Personalización</span><span>|</span><a href="https://www.instagram.com/maelipapeleria/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">Síguenos&nbsp;&nbsp; Instagram&nbsp;&nbsp; TikTok</a></div>
 <header class="header">
 <div class="head">
 <label class="search">⌕<input id="search" placeholder="Buscar productos..." autocomplete="off"></label>
-<a class="logo" href="#inicio" aria-label="MAELI Papelería"><span class="logoMain">MAELI</span><span class="logoScript">Papelería</span><span class="logoHeart">♥</span></a>
+<a class="logo" href="#inicio" aria-label="MAELI Papelería"><img src="/assets/logo-original.svg?v=2" alt="MAELI Papelería" style="width:260px;height:72px;object-fit:contain;display:block"></a>
 <div class="actions"><button class="cart" id="cartBtn">🛒 Carrito <span class="bubble" id="count">0</span></button></div>
 </div>
 <nav class="nav" id="mainNav"></nav>
