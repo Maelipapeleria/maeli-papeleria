@@ -1,0 +1,50 @@
+{
+  "navigation": [
+    {
+      "label": "INICIO",
+      "target": "inicio",
+      "active": true
+    },
+    {
+      "label": "AGENDAS",
+      "target": "catalogo",
+      "active": true
+    },
+    {
+      "label": "PAPELERÍA",
+      "target": "catalogo",
+      "active": true
+    },
+    {
+      "label": "STICKERS",
+      "target": "catalogo",
+      "active": true
+    },
+    {
+      "label": "SUBLIMACIÓN",
+      "target": "catalogo",
+      "active": true
+    },
+    {
+      "label": "CELEBRACIONES",
+      "target": "banners",
+      "active": true
+    },
+    {
+      "label": "REGALOS",
+      "target": "catalogo",
+      "active": true
+    },
+    {
+      "label": "OFERTAS",
+      "target": "catalogo",
+      "active": true
+    }
+  ],
+  "homepage": {
+    "newArrivalsTitle": "Recién llegados",
+    "newArrivalsLimit": 8,
+    "showNewArrivals": true,
+    "showCelebrations": true
+  }
+}
