@@ -8,7 +8,7 @@
     },
     {
       "image": "/assets/uploads/1000171904.png",
-      "title": "Agenda A6",
+      "title": "Agenda de Bolsillo ",
       "price": 6990,
       "target": "Catálogo "
     },
@@ -16,6 +16,36 @@
       "image": "/assets/uploads/1000171905.png",
       "title": "Abridores de Metal",
       "price": 2500,
+      "target": "Catálogo "
+    },
+    {
+      "image": "/assets/uploads/1000171937.png",
+      "title": "Tazón Corazón con Tapa ",
+      "price": 6800,
+      "target": "Catálogo "
+    },
+    {
+      "image": "/assets/uploads/1000171938.png",
+      "title": "Etiquetas de Tela",
+      "price": 2000,
+      "target": "Catálogo "
+    },
+    {
+      "image": "/assets/uploads/1000171941.png",
+      "title": "Mouse Pad",
+      "price": 3500,
+      "target": "Catálogo "
+    },
+    {
+      "image": "/assets/uploads/1000171882.png",
+      "title": "Mini Calendario Imán ",
+      "price": 2000,
+      "target": "Catálogo "
+    },
+    {
+      "image": "/assets/uploads/1000170810.jpg",
+      "title": "Mug Térmico ",
+      "price": 8900,
       "target": "Catálogo "
     }
   ]
