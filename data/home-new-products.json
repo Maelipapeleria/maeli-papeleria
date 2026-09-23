@@ -1,3 +1,10 @@
 {
-  "products": []
+  "products": [
+    {
+      "image": "/assets/uploads/1000171884.png",
+      "title": "Calendario bimensual ",
+      "price": 2500,
+      "target": "Catálogo "
+    }
+  ]
 }
