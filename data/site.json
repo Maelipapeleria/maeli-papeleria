@@ -42,7 +42,7 @@
     }
   ],
   "homepage": {
-    "newArrivalsTitle": "Recién llegados",
+    "newArrivalsTitle": "Nuevos productos",
     "newArrivalsLimit": 8,
     "showNewArrivals": true,
     "showCelebrations": true,
