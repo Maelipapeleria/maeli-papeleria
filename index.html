@@ -33,10 +33,10 @@ main{width:100%;margin:0;padding:24px 24px 50px}.sectionHead{display:flex;justif
 <a class="logo" href="#inicio" aria-label="MAELI Papelería"><span class="logoMain">MAELI</span><span class="logoScript">Papelería</span><span class="logoHeart">♥</span></a>
 <div class="actions"><button class="cart" id="cartBtn">🛒 Carrito <span class="bubble" id="count">0</span></button></div>
 </div>
-<nav class="nav"><a href="#inicio">INICIO</a><a href="#catalogo">AGENDAS</a><a href="#catalogo">PAPELERÍA</a><a href="#catalogo">STICKERS</a><a href="#catalogo">SUBLIMACIÓN</a><a href="#banners">CELEBRACIONES</a><a href="#catalogo">REGALOS</a><a href="#catalogo">OFERTAS</a></nav>
+<nav class="nav" id="mainNav"></nav>
 </header>
 <main id="inicio">
-<section><div class="sectionHead"><h1 class="title"><span class="heart">♥</span>Recién llegados</h1><a class="all" href="#catalogo">VER TODOS&nbsp; →</a></div><div class="grid" id="featured"></div></section>
+<section><div class="sectionHead"><h1 class="title"><span class="heart">♥</span><span id="newArrivalsTitle">Recién llegados</span></h1><a class="all" href="#catalogo">VER TODOS&nbsp; →</a></div><div class="grid" id="featured"></div></section>
 <section class="bannerArea" id="banners"><div class="sectionHead"><h2 class="title">Celebraciones</h2></div><div class="banners"><a class="banner" id="celebraciones"><div class="fallback"><h3>Celebraciones MAELI</h3><p>Detalles personalizados para cada momento</p></div></a><a class="banner" id="halloween"><div class="fallback"><h3>Halloween en MAELI</h3><p>Kits personalizados para celebrar</p></div></a></div></section>
 <section class="catalog" id="catalogo"><div class="sectionHead"><h2 class="title">Catálogo</h2></div><div class="filters" id="filters"></div><div class="grid" id="products"></div></section>
 </main>
@@ -55,147 +55,57 @@ main{width:100%;margin:0;padding:24px 24px 50px}.sectionHead{display:flex;justif
 <script>
 (function(){
 "use strict";
-var products=[], cart=[], activeCategory="Todos", detailItem=null, agendaExtras=[];
+var products=[],cart=[],activeCategory="Todos",detailItem=null,agendaExtras=[],site={navigation:[],homepage:{}};
 function $(s){return document.querySelector(s)}
 function money(n){return "$"+Number(n||0).toLocaleString("es-CL")}
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(m){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]})}
 function groupByQuantity(list){
-  var groups={}, out=[];
-  list.forEach(function(p){
-    var m=String(p.name||"").match(/^(.*?)[ ·-]+(50|100)(?:\s+unidades?)?$/i);
-    if(m){
-      var key=(p.category+"|"+m[1]).toLowerCase();
-      if(!groups[key]) groups[key]=[];
-      groups[key].push(p);
-    }else out.push(p);
-  });
-  Object.keys(groups).forEach(function(k){
-    var v=groups[k];
-    v.sort(function(a,b){
-      var ma=String(a.name).match(/(50|100)(?:\s+unidades?)?$/i), mb=String(b.name).match(/(50|100)(?:\s+unidades?)?$/i);
-      return Number(ma?ma[1]:0)-Number(mb?mb[1]:0);
-    });
-    out.push({group:true,id:"qty-"+v[0].id,name:String(v[0].name).replace(/\s*[·-]+\s*(50|100)(?:\s+unidades?)?$/i,""),category:v[0].category,desc:v[0].desc,image:v.find(function(x){return x.image})?.image||"",variants:v});
-  });
-  return out;
+ var groups={},out=[];
+ list.forEach(function(p){var m=String(p.name||"").match(/^(.*?)[ ·-]+(50|100)(?:\s+unidades?)?$/i);
+  if(m){var key=(p.category+"|"+m[1]).toLowerCase();(groups[key]||(groups[key]=[])).push(p)}else out.push(p);
+ });
+ Object.keys(groups).forEach(function(k){var v=groups[k];v.sort(function(a,b){var ma=String(a.name).match(/(50|100)(?:\s+unidades?)?$/i),mb=String(b.name).match(/(50|100)(?:\s+unidades?)?$/i);return Number(ma?ma[1]:0)-Number(mb?mb[1]:0)});
+  out.push({group:true,id:"qty-"+v[0].id,name:String(v[0].name).replace(/\s*[·-]+\s*(50|100)(?:\s+unidades?)?$/i,""),category:v[0].category,desc:v[0].desc,image:v.find(function(x){return x.image})?.image||"",variants:v});
+ });return out;
 }
-function card(p){
-  var price=p.group?money(p.variants[0].price):money(p.price);
-  var img=p.image?'<img src="'+p.image+'" alt="'+esc(p.name)+'">':'<div style="height:100%;display:grid;place-items:center;font-size:40px">✦</div>';
-  return '<article class="card" data-product-id="'+esc(p.id)+'"><div class="photo">'+img+'<button class="wish" type="button" aria-label="Favorito">♡</button><button class="view" type="button" data-action="detail">Ver detalle</button></div><div class="info"><h3 class="name">'+esc(p.name)+'</h3><div class="price">'+price+(p.group?' <small style="font-size:11px;color:#777;font-weight:400">desde</small>':'')+'</div><button class="buy" type="button" data-action="detail">Ver opciones</button><div class="dots"><i class="dot d1"></i><i class="dot d2"></i><i class="dot d3"></i><i class="dot d4"></i></div></div></article>';
+function card(p){var price=p.group?money(p.variants[0].price):money(p.price),img=p.image?'<img src="'+p.image+'" alt="'+esc(p.name)+'">':'<div style="height:100%;display:grid;place-items:center;font-size:40px">✦</div>';
+ return '<article class="card" data-product-id="'+esc(p.id)+'"><div class="photo">'+img+'<button class="wish" type="button" aria-label="Favorito">♡</button><button class="view" type="button" data-action="detail">Ver detalle</button></div><div class="info"><h3 class="name">'+esc(p.name)+'</h3><div class="price">'+price+(p.group?' <small style="font-size:11px;color:#777;font-weight:400">desde</small>':'')+'</div><button class="buy" type="button" data-action="detail">Ver opciones</button><div class="dots"><i class="dot d1"></i><i class="dot d2"></i><i class="dot d3"></i><i class="dot d4"></i></div></div></article>';
 }
 function render(){
-  var q=(($("#search")&&$("#search").value)||"").toLowerCase().trim();
-  var all=groupByQuantity(products);
-  var filtered=all.filter(function(p){
-    return (activeCategory==="Todos"||p.category===activeCategory) && (!q || [p.name,p.category,p.desc].join(" ").toLowerCase().indexOf(q)>=0);
-  });
-  var featured=all.slice(0,10);
-  $("#featured").innerHTML=featured.map(card).join("");
-  $("#products").innerHTML=filtered.map(card).join("");
-  var cats=["Todos"];
-  products.forEach(function(p){if(cats.indexOf(p.category)<0)cats.push(p.category)});
-  $("#filters").innerHTML=cats.map(function(c){return '<button type="button" class="filter '+(c===activeCategory?"active":"")+'" data-cat="'+esc(c)+'">'+esc(c)+"</button>"}).join("");
-  $("#count").textContent=cart.length;
+ var q=(($("#search")&&$("#search").value)||"").toLowerCase().trim(),all=groupByQuantity(products);
+ var filtered=all.filter(function(p){return (activeCategory==="Todos"||p.category===activeCategory)&&(!q||[p.name,p.category,p.desc].join(" ").toLowerCase().indexOf(q)>=0)});
+ var featured=all.filter(function(p){return p.featured!==false}).slice(0,Number(site.homepage?.newArrivalsLimit||8));
+ if(q) featured=filtered.slice(0,Number(site.homepage?.newArrivalsLimit||8));
+ $("#featured").innerHTML=(site.homepage?.showNewArrivals!==false?featured.map(card).join(""):"");
+ $("#newArrivalsTitle").textContent=q?"Resultados de búsqueda":(site.homepage?.newArrivalsTitle||"Recién llegados");
+ $("#products").innerHTML=filtered.map(card).join("");
+ var cats=["Todos"];products.forEach(function(p){if(cats.indexOf(p.category)<0)cats.push(p.category)});
+ $("#filters").innerHTML=cats.map(function(c){return '<button type="button" class="filter '+(c===activeCategory?"active":"")+'" data-cat="'+esc(c)+'">'+esc(c)+"</button>"}).join("");
+ $("#count").textContent=cart.length;
 }
-function openModal(id){
-  var el=$("#"+id); if(el) el.classList.add("show");
-  if(id==="cartOverlay") renderCart();
-}
+function renderNav(){var nav=$("#mainNav");if(!nav)return;nav.innerHTML=(site.navigation||[]).filter(function(x){return x.active!==false}).map(function(x){return '<a href="#'+esc(x.target||"inicio")+'">'+esc(x.label||"")+"</a>"}).join("")}
+function openModal(id){var el=$("#"+id);if(el)el.classList.add("show");if(id==="cartOverlay")renderCart()}
 function closeModal(id){var el=$("#"+id);if(el)el.classList.remove("show")}
 function isAgenda(p){return /agenda|planner|carnet pedi[aá]trico/i.test((p.category||"")+" "+(p.name||""))}
-function updateDetailPrice(p){
-  var selected=$("#choiceArea input[name=qty]:checked");
-  var variant=p.group?(p.variants.find(function(v){return v.id===selected?.value})||p.variants[0]):p;
-  var extras=[].slice.call($("#choiceArea").querySelectorAll("input[data-extra]:checked")).map(function(i){return agendaExtras.find(function(e){return e.id===i.value})}).filter(Boolean);
-  var total=Number(variant.price||0)+extras.reduce(function(s,x){return s+Number(x.price||0)},0);
-  $("#detailPrice").textContent=money(total);
-}
-function addToCart(p){
-  var selected=$("#choiceArea input[name=qty]:checked");
-  var variant=p.group?(p.variants.find(function(v){return v.id===selected?.value})||p.variants[0]):p;
-  var extras=[].slice.call($("#choiceArea").querySelectorAll("input[data-extra]:checked")).map(function(i){return agendaExtras.find(function(e){return e.id===i.value})}).filter(Boolean);
-  var total=Number(variant.price||0)+extras.reduce(function(s,x){return s+Number(x.price||0)},0);
-  cart.push(Object.assign({},variant,{price:total,basePrice:Number(variant.price||0),selectedExtras:extras}));
-  $("#count").textContent=cart.length; closeModal("detailOverlay"); showToast();
-}
-function showToast(){
-  var t=$("#toast"); if(!t)return;
-  t.textContent="Producto agregado al carrito"; t.classList.add("show");
-  clearTimeout(window.maeliToast); window.maeliToast=setTimeout(function(){t.classList.remove("show")},1800);
-}
-function openDetail(p){
-  detailItem=p;
-  var item=p.group?p.variants[0]:p;
-  $("#detailName").textContent=p.name;
-  $("#detailDesc").textContent=p.desc||"Producto personalizado.";
-  $("#detailImage").innerHTML=p.image?'<img src="'+p.image+'" alt="'+esc(p.name)+'">':'<div style="min-height:320px;display:grid;place-items:center;font-size:70px">✦</div>';
-  var html="";
-  if(p.group){
-    html+='<h3 style="margin:18px 0 8px">Selecciona la cantidad</h3><div class="choiceGrid">';
-    p.variants.forEach(function(v,i){
-      var m=String(v.name).match(/(50|100)(?:\s+unidades?)?$/i);
-      var label=m?Number(m[1]).toLocaleString("es-CL")+" unidades":v.name;
-      html+='<label class="choice"><span><b>'+esc(label)+'</b><small>'+money(v.price)+'</small></span><input type="radio" name="qty" value="'+esc(v.id)+'" '+(i===0?"checked":"")+'></label>';
-    });
-    html+="</div>";
-  }
-  if(isAgenda(p)&&agendaExtras.length){
-    html+='<h3 style="margin:18px 0 8px">Opciones adicionales</h3><div class="choiceGrid">';
-    agendaExtras.forEach(function(x){html+='<label class="choice"><span><b>'+esc(x.name)+'</b><small>+'+money(x.price)+'</small></span><input type="checkbox" value="'+esc(x.id)+'" data-extra></label>'});
-    html+="</div>";
-  }
-  $("#choiceArea").innerHTML=html;
-  [].slice.call($("#choiceArea").querySelectorAll("input")).forEach(function(i){i.onchange=function(){updateDetailPrice(p)}});
-  $("#detailPrice").textContent=money(item.price); updateDetailPrice(p);
-  $("#detailAdd").onclick=function(){addToCart(p)};
-  openModal("detailOverlay");
-}
-function renderCart(){
-  $("#cartList").innerHTML=cart.length?cart.map(function(p,i){
-    return '<div class="cartItem">'+(p.image?'<img src="'+p.image+'" alt="">':'<div style="width:70px;height:70px;background:#fafafa;border-radius:8px;display:grid;place-items:center">✦</div>')+'<div><b>'+esc(p.name)+'</b>'+(p.selectedExtras&&p.selectedExtras.length?'<div style="font-size:12px;color:#777;margin-top:4px">Extras: '+esc(p.selectedExtras.map(function(x){return x.name}).join(", "))+'</div>':'')+'<div style="font-size:12px;color:#777;margin-top:4px">'+esc(p.desc||"")+'</div><button type="button" class="removeItem" data-remove="'+i+'">Eliminar</button></div><strong>'+money(p.price)+'</strong></div>';
-  }).join(""):'<p style="color:#777">Tu carrito está vacío.</p>';
-  $("#cartTotal").textContent=money(cart.reduce(function(s,p){return s+Number(p.price||0)},0));
-}
-function renderFaq(){
-  fetch("data/faq.json?"+Date.now()).then(function(r){return r.json()}).then(function(d){
-    var list=d.faqs||[];
-    $("#faqList").innerHTML=list.filter(function(x){return x.active!==false}).map(function(x,i){return '<details id="faq-'+i+'"><summary>'+esc(x.question)+'</summary><p>'+esc(x.answer).replace(/\n/g,"<br>")+"</p></details>"}).join("");
-  }).catch(function(){
-    $("#faqList").innerHTML='<details open><summary>¿Cómo realizo un pedido?</summary><p>Agrega los productos al carrito y envía tu pedido por WhatsApp.</p></details>';
-  });
-}
-function load(){
-  Promise.all([
-    fetch("data/products.json?"+Date.now()).then(function(r){if(!r.ok)throw new Error("products");return r.json()}),
-    fetch("data/celebrations.json?"+Date.now()).then(function(r){if(!r.ok)throw new Error("celebrations");return r.json()}).catch(function(){return {celebrations:[]}})
-  ]).then(function(data){
-    products=data[0].products||[]; agendaExtras=data[0].agendaExtras||[];
-    (data[1].celebrations||[]).forEach(function(c){
-      if(!c.active||!c.banner)return;
-      var id=c.id==="celebraciones"?"celebraciones":c.id==="halloween"?"halloween":null;
-      if(id){var el=$("#"+id);el.innerHTML='<img src="'+c.banner+'" alt="'+esc(c.title||c.name)+'">';el.onclick=function(e){e.preventDefault();$("#catalogo").scrollIntoView({behavior:"smooth"})}}
-    });
-    render();
-  }).catch(function(e){console.error(e);products=[];render()});
-}
-document.addEventListener("click",function(e){
-  var btn=e.target.closest("button[data-action='detail']");
-  if(btn){var cardEl=btn.closest(".card");var id=cardEl&&cardEl.getAttribute("data-product-id");var p=groupByQuantity(products).find(function(x){return x.id===id});if(p)openDetail(p);return}
-  var wish=e.target.closest(".wish"); if(wish){wish.textContent=wish.textContent==="♡"?"♥":"♡";return}
-  var filter=e.target.closest("[data-cat]"); if(filter){activeCategory=filter.getAttribute("data-cat");render();return}
-  var remove=e.target.closest("[data-remove]"); if(remove){cart.splice(Number(remove.getAttribute("data-remove")),1);$("#count").textContent=cart.length;renderCart();return}
-  var close=e.target.closest("[data-close]"); if(close){closeModal(close.getAttribute("data-close"));return}
-});
-$("#search").addEventListener("input",render);
+function updateDetailPrice(p){var selected=$("#choiceArea input[name=qty]:checked"),variant=p.group?(p.variants.find(function(v){return v.id===selected?.value})||p.variants[0]):p,extras=[].slice.call($("#choiceArea").querySelectorAll("input[data-extra]:checked")).map(function(i){return agendaExtras.find(function(e){return e.id===i.value})}).filter(Boolean),total=Number(variant.price||0)+extras.reduce(function(s,x){return s+Number(x.price||0)},0);$("#detailPrice").textContent=money(total)}
+function showToast(){var t=$("#toast");if(t){t.classList.add("show");clearTimeout(window.mt);window.mt=setTimeout(function(){t.classList.remove("show")},1800)}}
+function addToCart(p){var selected=$("#choiceArea input[name=qty]:checked"),variant=p.group?(p.variants.find(function(v){return v.id===selected?.value})||p.variants[0]):p,extras=[].slice.call($("#choiceArea").querySelectorAll("input[data-extra]:checked")).map(function(i){return agendaExtras.find(function(e){return e.id===i.value})}).filter(Boolean),total=Number(variant.price||0)+extras.reduce(function(s,x){return s+Number(x.price||0)},0);cart.push(Object.assign({},variant,{price:total,basePrice:Number(variant.price||0),selectedExtras:extras}));$("#count").textContent=cart.length;closeModal("detailOverlay");showToast()}
+function openDetail(p){var item=p.group?p.variants[0]:p;$("#detailName").textContent=p.name;$("#detailDesc").textContent=p.desc||"Producto personalizado.";$("#detailImage").innerHTML=p.image?'<img src="'+p.image+'" alt="'+esc(p.name)+'">':'<div style="min-height:320px;display:grid;place-items:center;font-size:70px">✦</div>';var h="";
+ if(p.group){h+='<h3 style="margin:18px 0 8px">Selecciona la cantidad</h3><div class="choiceGrid">';p.variants.forEach(function(v,i){var m=String(v.name).match(/(50|100)(?:\s+unidades?)?$/i),label=m?Number(m[1]).toLocaleString("es-CL")+" unidades":v.name;h+='<label class="choice"><span><b>'+esc(label)+'</b><small>'+money(v.price)+'</small></span><input type="radio" name="qty" value="'+esc(v.id)+'" '+(i===0?"checked":"")+'></label>'});h+="</div>"}
+ if(isAgenda(p)&&agendaExtras.length){h+='<h3 style="margin:18px 0 8px">Opciones adicionales</h3><div class="choiceGrid">';agendaExtras.forEach(function(x){h+='<label class="choice"><span><b>'+esc(x.name)+'</b><small>+'+money(x.price)+'</small></span><input type="checkbox" value="'+esc(x.id)+'" data-extra></label>'});h+="</div>"}
+ $("#choiceArea").innerHTML=h;[].slice.call($("#choiceArea").querySelectorAll("input")).forEach(function(i){i.onchange=function(){updateDetailPrice(p)}});$("#detailPrice").textContent=money(item.price);updateDetailPrice(p);$("#detailAdd").onclick=function(){addToCart(p)};openModal("detailOverlay")}
+function renderCart(){$("#cartList").innerHTML=cart.length?cart.map(function(p,i){return '<div class="cartItem">'+(p.image?'<img src="'+p.image+'" alt="">':'<div style="width:70px;height:70px;background:#fafafa;border-radius:8px;display:grid;place-items:center">✦</div>')+'<div><b>'+esc(p.name)+'</b>'+(p.selectedExtras?.length?'<div style="font-size:12px;color:#777">Extras: '+esc(p.selectedExtras.map(function(x){return x.name}).join(", "))+'</div>':'')+'<div style="font-size:12px;color:#777">'+esc(p.desc||"")+'</div><button type="button" class="removeItem" data-remove="'+i+'">Eliminar</button></div><strong>'+money(p.price)+'</strong></div>'}).join(""):'<p style="color:#777">Tu carrito está vacío.</p>';$("#cartTotal").textContent=money(cart.reduce(function(s,p){return s+Number(p.price||0)},0))}
+function load(){Promise.all([
+ fetch("data/products.json?"+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json()}),
+ fetch("data/celebrations.json?"+Date.now()).then(function(r){return r.ok?r.json():{celebrations:[]}}),
+ fetch("data/site.json?"+Date.now()).then(function(r){return r.ok?r.json():{navigation:[],homepage:{}}})
+ ]).then(function(d){products=d[0].products||[];agendaExtras=d[0].agendaExtras||[];site=d[2]||site;renderNav();if($("#banners"))$("#banners").style.display=site.homepage?.showCelebrations===false?"none":"";(d[1].celebrations||[]).forEach(function(c){if(!c.active||!c.banner)return;var id=c.id==="celebraciones"?"celebraciones":c.id==="halloween"?"halloween":null;if(id){var el=$("#"+id);el.innerHTML='<img src="'+c.banner+'" alt="'+esc(c.title||c.name)+'">';el.onclick=function(e){e.preventDefault();$("#catalogo").scrollIntoView({behavior:"smooth"})}}});render()}).catch(function(e){console.error(e);render()})}
+document.addEventListener("click",function(e){var btn=e.target.closest("button[data-action='detail']");if(btn){var c=btn.closest(".card"),id=c&&c.getAttribute("data-product-id"),p=groupByQuantity(products).find(function(x){return x.id===id});if(p)openDetail(p);return}var w=e.target.closest(".wish");if(w){w.textContent=w.textContent==="♡"?"♥":"♡";return}var f=e.target.closest("[data-cat]");if(f){activeCategory=f.getAttribute("data-cat");render();return}var rm=e.target.closest("[data-remove]");if(rm){cart.splice(Number(rm.getAttribute("data-remove")),1);$("#count").textContent=cart.length;renderCart();return}var cl=e.target.closest("[data-close]");if(cl)closeModal(cl.getAttribute("data-close"))});
+$("#search").addEventListener("input",function(){render();if(this.value.trim())$("#catalogo").scrollIntoView({behavior:"smooth",block:"start"})});
 $("#cartBtn").addEventListener("click",function(){openModal("cartOverlay")});
-$("#whatsapp").addEventListener("click",function(){
-  if(!cart.length){alert("Tu carrito está vacío.");return}
-  var msg="Hola MAELI Papelería, quiero hacer este pedido:\n\n"+cart.map(function(p,i){return (i+1)+". "+p.name+" — "+money(p.price)}).join("\n")+"\n\nTotal: "+money(cart.reduce(function(s,p){return s+Number(p.price||0)},0));
-  window.open("https://wa.me/56930198910?text="+encodeURIComponent(msg),"_blank");
-});
-document.querySelectorAll("[data-close]").forEach(function(b){b.addEventListener("click",function(){closeModal(b.getAttribute("data-close"))})});
-renderFaq(); load();
+$("#whatsapp").addEventListener("click",function(){if(!cart.length){alert("Tu carrito está vacío.");return}var msg="Hola MAELI Papelería, quiero hacer este pedido:\n\n"+cart.map(function(p,i){return(i+1)+". "+p.name+" — "+money(p.price)}).join("\n")+"\n\nTotal: "+money(cart.reduce(function(s,p){return s+Number(p.price||0)},0));window.open("https://wa.me/56930198910?text="+encodeURIComponent(msg),"_blank")});
+renderFaq();load();
+function renderFaq(){fetch("data/faq.json?"+Date.now()).then(function(r){return r.json()}).then(function(d){$("#faqList").innerHTML=(d.faqs||[]).filter(function(x){return x.active!==false}).map(function(x,i){return '<details id="faq-'+i+'"><summary>'+esc(x.question)+'</summary><p>'+esc(x.answer).replace(/\n/g,"<br>")+"</p></details>"}).join("")}).catch(function(){})}
 })();
 </script>
 </body>
