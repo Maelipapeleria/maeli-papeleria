@@ -65,3 +65,15 @@ collections:
               - { label: Precio, name: price, widget: number }
               - { label: Descripción, name: desc, widget: text }
               - { label: Ícono, name: icon, widget: string, required: false }
+
+      - name: faq
+        label: Preguntas frecuentes
+        file: data/faq.json
+        fields:
+          - label: Preguntas frecuentes
+            name: faqs
+            widget: list
+            fields:
+              - { label: Pregunta, name: question, widget: string }
+              - { label: Respuesta, name: answer, widget: text }
+              - { label: Activa, name: active, widget: boolean, default: true }
