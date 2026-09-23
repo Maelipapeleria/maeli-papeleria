@@ -31,21 +31,14 @@
       "active": true
     },
     {
-      "label": "REGALOS",
-      "target": "catalogo",
-      "active": true
-    },
-    {
       "label": "OFERTAS",
       "target": "catalogo",
       "active": true
     }
   ],
   "homepage": {
-    "newArrivalsTitle": "Nuevos productos",
     "newArrivalsLimit": 8,
-    "showNewArrivals": true,
-    "showCelebrations": true,
+    "showCelebrations": false,
     "categorySection": {
       "active": true,
       "title": "Encuentra tu idea perfecta",
@@ -53,32 +46,25 @@
       "items": [
         {
           "title": "Perfecto para regalo",
-          "image": "/assets/uploads/1000170811.jpg",
+          "image": "/assets/uploads/img-20260923-wa0010.jpg",
           "target": "catalogo"
         },
         {
           "title": "Cuadernos y libretas",
-          "image": "/assets/uploads/1000170813.jpg",
+          "image": "/assets/uploads/img-20260923-wa0025.jpg",
           "target": "catalogo"
         },
         {
           "title": "Botellas y vasos",
-          "image": "/assets/uploads/1000137204.png",
+          "image": "/assets/uploads/img-20260923-wa0005.jpg",
           "target": "catalogo"
         },
         {
           "title": "Productos personalizados",
-          "image": "/assets/uploads/1000170802.jpg",
+          "image": "/assets/uploads/img-20260923-wa0007.jpg",
           "target": "catalogo"
         }
       ]
-    },
-    "hero": {
-      "active": false,
-      "title": "",
-      "subtitle": "",
-      "button": "Ver productos",
-      "image": ""
     },
     "promo": {
       "active": false,
@@ -87,6 +73,17 @@
       "button": "",
       "image": ""
     },
+    "paymentText": "Puedes pagar mediante transferencia y los medios de pago disponibles al coordinar tu pedido.",
+    "hero": {
+      "active": false,
+      "title": "",
+      "subtitle": "",
+      "button": "Ver productos",
+      "image": ""
+    },
+    "homepageText": "Diseño, impresión y personalización de productos de papelería.",
+    "shippingText": "Realizamos envíos a todo Chile. Coordina tu despacho al realizar tu pedido.",
+    "showNewArrivals": true,
     "services": [
       {
         "icon": "🚚",
@@ -109,8 +106,6 @@
         "text": "Coordinación de pedidos"
       }
     ],
-    "shippingText": "Realizamos envíos a todo Chile. Coordina tu despacho al realizar tu pedido.",
-    "paymentText": "Puedes pagar mediante transferencia y los medios de pago disponibles al coordinar tu pedido.",
-    "homepageText": "Diseño, impresión y personalización de productos de papelería."
+    "newArrivalsTitle": "Nuevos productos"
   }
 }
