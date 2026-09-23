@@ -1,0 +1,24 @@
+{
+  "faqs": [
+    {
+      "question": "¿Cómo realizo un pedido?",
+      "answer": "Agrega los productos al carrito, selecciona las opciones de personalización cuando correspondan y envía tu pedido por WhatsApp.",
+      "active": true
+    },
+    {
+      "question": "Información de despacho",
+      "answer": "Realizamos envíos a todo Chile. Los tiempos y costos pueden variar según la comuna y el tipo de envío.",
+      "active": true
+    },
+    {
+      "question": "¿Cuáles son las formas de pago?",
+      "answer": "Pago mediante Webpay y transferencia bancaria. Los datos e instrucciones se entregan al confirmar el pedido.",
+      "active": true
+    },
+    {
+      "question": "Términos y condiciones",
+      "answer": "Los productos personalizados se elaboran según las especificaciones confirmadas por el cliente. Antes de producir, revisa cuidadosamente nombres, fechas, colores y demás datos enviados. Los tiempos de producción y despacho se informan al confirmar cada pedido.",
+      "active": true
+    }
+  ]
+}
