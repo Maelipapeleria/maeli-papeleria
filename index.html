@@ -62,6 +62,16 @@ main{width:100%;margin:0;padding:24px 24px 50px}.sectionHead{display:flex;justif
   .catalog{margin-top:70px}
 }
 </style>
+<style>
+/* Catálogo más liviano y M de MAELI en el pie */
+.card .photo{width:90%;margin-left:auto;margin-right:auto}
+.card .info{width:90%;margin-left:auto;margin-right:auto}
+.footerInner{grid-template-columns:1.15fr .7fr 1fr 1fr 1fr;align-items:center}
+.footerMark{display:flex;justify-content:center;align-items:center;min-height:150px}
+.footerMark svg{width:145px;height:145px;display:block}
+@media(max-width:950px){.footerInner{grid-template-columns:1fr 1fr}.footerMark{grid-column:1/-1;min-height:120px}.footerMark svg{width:125px;height:125px}}
+@media(max-width:600px){.card .photo,.card .info{width:94%}.footerInner{grid-template-columns:1fr}.footerMark{grid-column:auto}}
+</style>
 </head>
 <body>
 <div class="top"><span>🚚 Envíos a todo Chile</span><span>|</span><span>Diseño · Impresión · Personalización</span><span>|</span><a href="https://www.instagram.com/maelipapeleria/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">Síguenos&nbsp;&nbsp; Instagram&nbsp;&nbsp; TikTok</a></div>
@@ -83,7 +93,7 @@ main{width:100%;margin:0;padding:24px 24px 50px}.sectionHead{display:flex;justif
 </main>
 <section class="services" id="servicesHome"></section>
 <footer class="footer"><div class="footerInner">
-<div class="footerBrand"><div class="footerLogo"><span class="logoMain">MAELI</span><span class="logoScript">Papelería</span><span class="logoHeart">♥</span></div><p>Diseño, impresión y personalización de productos de papelería.</p></div>
+<div class="footerBrand"><div class="footerMark" aria-label="M de MAELI"><svg viewBox="0 0 320 220" role="img" aria-hidden="true"><path d="M32 184 C54 174 53 139 55 103 C57 68 72 30 91 31 C108 32 102 68 99 93 C96 119 94 142 101 145 C108 148 120 125 132 100 C144 75 157 45 174 39 C192 33 187 69 181 96 C173 130 169 165 179 180 C191 197 213 199 232 190" fill="none" stroke="#e9798d" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/><path d="M220 182 C242 174 261 156 277 132" fill="none" stroke="#e9798d" stroke-width="12" stroke-linecap="round"/><g transform="translate(246 55) rotate(18)"><ellipse cx="30" cy="25" rx="30" ry="15" fill="#f7c2cb" stroke="#e9798d" stroke-width="7"/><path d="M3 31 L15 92 Q30 103 45 92 L57 31" fill="#f7c2cb" stroke="#e9798d" stroke-width="7"/><path d="M15 92 L30 126 L45 92" fill="#f7c2cb" stroke="#e9798d" stroke-width="7"/><path d="M10 27 Q30 38 50 27" fill="none" stroke="#fff" stroke-width="4" opacity=".8"/></g></svg></div><div class="footerLogo"><span class="logoMain">MAELI</span><span class="logoScript">Papelería</span><span class="logoHeart">♥</span></div><p>Diseño, impresión y personalización de productos de papelería.</p></div>
 <div class="footerCol"><h3>Contáctanos</h3><a href="https://wa.me/56930198910" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:contacto.maeli@gmail.com">contacto.maeli@gmail.com</a><a href="https://www.instagram.com/maelipapeleria/" target="_blank" rel="noopener">Instagram: @maelipapeleria</a></div>
 <div class="footerCol"><h3>Información</h3><a href="#faq">Preguntas frecuentes</a><a href="#despachos">Información de despacho</a><a href="#pagos">Formas de pago</a><a href="#terminos">Términos y condiciones</a></div>
 <div class="footerCol"><h3>Ayuda</h3><a href="#catalogo">Ver catálogo</a><a href="#banners">Celebraciones</a></div>
