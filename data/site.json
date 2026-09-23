@@ -38,6 +38,7 @@
   ],
   "homepage": {
     "newArrivalsLimit": 8,
+    "homeNewProducts": [],
     "showCelebrations": false,
     "categorySection": {
       "active": true,
@@ -46,7 +47,7 @@
       "items": [
         {
           "title": "Perfecto para regalo",
-          "image": "/assets/uploads/img-20260923-wa0010.jpg",
+          "image": "/assets/uploads/1000171923.png",
           "target": "catalogo"
         },
         {
@@ -56,12 +57,12 @@
         },
         {
           "title": "Botellas y vasos",
-          "image": "/assets/uploads/img-20260923-wa0005.jpg",
+          "image": "/assets/uploads/1000171924.png",
           "target": "catalogo"
         },
         {
           "title": "Productos personalizados",
-          "image": "/assets/uploads/img-20260923-wa0007.jpg",
+          "image": "/assets/uploads/1000171925.png",
           "target": "catalogo"
         }
       ]
@@ -84,7 +85,6 @@
     "homepageText": "Diseño, impresión y personalización de productos de papelería.",
     "shippingText": "Realizamos envíos a todo Chile. Coordina tu despacho al realizar tu pedido.",
     "showNewArrivals": true,
-    "homeNewProducts": [],
     "services": [
       {
         "icon": "🚚",
