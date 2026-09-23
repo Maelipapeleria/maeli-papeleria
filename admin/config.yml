@@ -96,6 +96,7 @@ collections:
               - { label: Nombre que se muestra, name: label, widget: string }
               - { label: Sección de destino, name: target, widget: string, hint: "Usa inicio, catalogo o banners." }
               - { label: Mostrar, name: active, widget: boolean, default: true }
+
           - label: Página de inicio
             name: homepage
             widget: object
@@ -103,30 +104,7 @@ collections:
               - { label: Título de productos destacados, name: newArrivalsTitle, widget: string }
               - { label: Cantidad de productos destacados, name: newArrivalsLimit, widget: number, value_type: int, min: 1, max: 20 }
               - { label: Mostrar productos destacados, name: showNewArrivals, widget: boolean, default: true }
-              - { label: Mostrar sección Celebraciones, name: showCelebrations, widget: boolean, default: true }
 
-  - name: home
-    label: Portada
-    files:
-      - name: portada
-        label: Portada
-        file: data/site.json
-        fields:
-          - label: Menú de navegación
-            name: navigation
-            widget: list
-            fields:
-              - { label: Nombre, name: label, widget: string }
-              - { label: Destino, name: target, widget: string, hint: "Usa inicio, catalogo o banners." }
-              - { label: Mostrar, name: active, widget: boolean, default: true }
-          - label: Configuración de inicio
-            name: homepage
-            widget: object
-            fields:
-              - { label: Título de productos destacados, name: newArrivalsTitle, widget: string }
-              - { label: Cantidad de productos destacados, name: newArrivalsLimit, widget: number, value_type: int, min: 1, max: 20 }
-              - { label: Mostrar productos destacados, name: showNewArrivals, widget: boolean, default: true }
-              - { label: Mostrar celebraciones, name: showCelebrations, widget: boolean, default: true }
               - label: Sección de categorías de portada
                 name: categorySection
                 widget: object
@@ -134,7 +112,7 @@ collections:
                   - { label: Mostrar sección, name: active, widget: boolean, default: true }
                   - { label: Título, name: title, widget: string }
                   - { label: Subtítulo, name: subtitle, widget: text, required: false }
-                  - label: Cuatro tarjetas
+                  - label: Tarjetas de imágenes de la portada
                     name: items
                     widget: list
                     max: 4
@@ -142,6 +120,7 @@ collections:
                       - { label: Texto, name: title, widget: string }
                       - { label: Imagen, name: image, widget: image, required: false }
                       - { label: Destino, name: target, widget: string, hint: "Usa catalogo para llevar al catálogo." }
+
               - label: Portada principal
                 name: hero
                 widget: object
@@ -151,6 +130,7 @@ collections:
                   - { label: Subtítulo, name: subtitle, widget: text, required: false }
                   - { label: Texto del botón, name: button, widget: string, required: false }
                   - { label: Imagen, name: image, widget: image, required: false }
+
               - label: Promoción
                 name: promo
                 widget: object
@@ -160,6 +140,7 @@ collections:
                   - { label: Texto, name: text, widget: text, required: false }
                   - { label: Texto del botón, name: button, widget: string, required: false }
                   - { label: Imagen, name: image, widget: image, required: false }
+
               - label: Servicios
                 name: services
                 widget: list
@@ -168,6 +149,8 @@ collections:
                   - { label: Ícono, name: icon, widget: string }
                   - { label: Título, name: title, widget: string }
                   - { label: Texto, name: text, widget: string }
+
               - { label: Texto de despacho, name: shippingText, widget: text, required: false }
               - { label: Texto de medios de pago, name: paymentText, widget: text, required: false }
               - { label: Texto de presentación, name: homepageText, widget: text, required: false }
+              - { label: Mostrar sección Celebraciones, name: showCelebrations, widget: boolean, default: true }
