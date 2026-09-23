@@ -45,6 +45,72 @@
     "newArrivalsTitle": "Recién llegados",
     "newArrivalsLimit": 8,
     "showNewArrivals": true,
-    "showCelebrations": true
+    "showCelebrations": true,
+    "categorySection": {
+      "active": true,
+      "title": "Encuentra tu idea perfecta",
+      "subtitle": "Explora nuestras categorías y encuentra ese detalle especial.",
+      "items": [
+        {
+          "title": "Perfecto para regalo",
+          "image": "/assets/uploads/1000170811.jpg",
+          "target": "catalogo"
+        },
+        {
+          "title": "Cuadernos y libretas",
+          "image": "/assets/uploads/1000170813.jpg",
+          "target": "catalogo"
+        },
+        {
+          "title": "Botellas y vasos",
+          "image": "/assets/uploads/1000137204.png",
+          "target": "catalogo"
+        },
+        {
+          "title": "Productos personalizados",
+          "image": "/assets/uploads/1000170802.jpg",
+          "target": "catalogo"
+        }
+      ]
+    },
+    "hero": {
+      "active": false,
+      "title": "",
+      "subtitle": "",
+      "button": "Ver productos",
+      "image": ""
+    },
+    "promo": {
+      "active": false,
+      "title": "",
+      "text": "",
+      "button": "",
+      "image": ""
+    },
+    "services": [
+      {
+        "icon": "🚚",
+        "title": "Envíos a todo Chile",
+        "text": "A regiones y RM"
+      },
+      {
+        "icon": "▣",
+        "title": "Medios de pago",
+        "text": "Webpay · Transferencia"
+      },
+      {
+        "icon": "🎁",
+        "title": "Personalización",
+        "text": "Diseños a pedido"
+      },
+      {
+        "icon": "✓",
+        "title": "Atención personalizada",
+        "text": "Coordinación de pedidos"
+      }
+    ],
+    "shippingText": "Realizamos envíos a todo Chile. Coordina tu despacho al realizar tu pedido.",
+    "paymentText": "Puedes pagar mediante transferencia y los medios de pago disponibles al coordinar tu pedido.",
+    "homepageText": "Diseño, impresión y personalización de productos de papelería."
   }
 }
