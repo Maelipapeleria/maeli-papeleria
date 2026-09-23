@@ -80,3 +80,26 @@ collections:
               - { label: Pregunta, name: question, widget: string }
               - { label: Respuesta, name: answer, widget: text }
               - { label: Activa, name: active, widget: boolean, default: true }
+
+  - name: site
+    label: Inicio y navegación
+    files:
+      - name: configuracion
+        label: Inicio y navegación
+        file: data/site.json
+        fields:
+          - label: Menú de navegación
+            name: navigation
+            widget: list
+            fields:
+              - { label: Nombre que se muestra, name: label, widget: string }
+              - { label: Sección de destino, name: target, widget: string, hint: "Usa inicio, catalogo o banners." }
+              - { label: Mostrar, name: active, widget: boolean, default: true }
+          - label: Página de inicio
+            name: homepage
+            widget: object
+            fields:
+              - { label: Título de productos destacados, name: newArrivalsTitle, widget: string }
+              - { label: Cantidad de productos destacados, name: newArrivalsLimit, widget: number, value_type: int, min: 1, max: 20 }
+              - { label: Mostrar productos destacados, name: showNewArrivals, widget: boolean, default: true }
+              - { label: Mostrar sección Celebraciones, name: showCelebrations, widget: boolean, default: true }
