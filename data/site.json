@@ -26,6 +26,11 @@
       "active": true
     },
     {
+      "active": true,
+      "label": "TAZONES Y BOTELLAS",
+      "target": "Tazas y botellas "
+    },
+    {
       "label": "CELEBRACIONES",
       "target": "banners",
       "active": true
