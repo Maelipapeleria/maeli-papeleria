@@ -25,8 +25,18 @@ collections:
               - { label: Descripción, name: desc, widget: text }
               - { label: Imagen, name: image, widget: image, required: false }
               - { label: Mostrar en “Recién llegados”, name: featured, widget: boolean, default: false }
-              - { label: Grupo de cantidad, name: groupId, widget: string, required: false }
-              - { label: Cantidad del grupo, name: quantity, widget: number, required: false }
+              - { label: Activar opciones de cantidad, name: hasQuantity, widget: boolean, default: false, hint: "Actívalo si este producto tendrá opciones como 50 hojas, 100 hojas, etc." }
+              - label: Opciones de cantidad
+                name: quantities
+                widget: list
+                required: false
+                condition: { field: hasQuantity, value: true }
+                hint: "Agrega las cantidades y sus precios. Ejemplo: 50 hojas / $4.000."
+                fields:
+                  - { label: Cantidad, name: label, widget: string, hint: "Ejemplo: 50 hojas" }
+                  - { label: Precio, name: price, widget: number, value_type: int, min: 0 }
+              - { label: Grupo de cantidad (compatibilidad), name: groupId, widget: string, required: false, hidden: true }
+              - { label: Cantidad del grupo (compatibilidad), name: quantity, widget: number, required: false, hidden: true }
           - label: Extras de agenda
             name: agendaExtras
             widget: list
