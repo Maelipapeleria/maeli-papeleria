@@ -307,14 +307,8 @@
       "image": "/assets/uploads/1000172553.png"
     },
     {
-      "id": "papel-a4-50",
-      "name": "Papel para envolver A4",
-      "category": "Papel para envolver",
-      "price": 6500,
-      "desc": "Papel mantequilla personalizado.",
-      "image": "",
-      "featured": false,
       "hasQuantity": true,
+      "price": 6500,
       "quantities": [
         {
           "label": "50 unidades",
@@ -324,17 +318,17 @@
           "label": "100 unidades",
           "price": 12000
         }
-      ]
+      ],
+      "name": "Papel para envolver A4",
+      "featured": false,
+      "desc": "Papel mantequilla personalizado.",
+      "id": "papel-a4-50",
+      "image": "",
+      "category": "Papel para envolver"
     },
     {
-      "id": "taco-166-50",
-      "name": "Taco 16 × 6 cm",
-      "category": "Recetarios / Tacos / Blocks",
-      "price": 4000,
-      "desc": "Personalizado.",
-      "image": "",
-      "featured": false,
       "hasQuantity": true,
+      "price": 4000,
       "quantities": [
         {
           "label": "50 unidades",
@@ -344,25 +338,53 @@
           "label": "100 unidades",
           "price": 7500
         }
-      ]
-    },
-    {
-      "id": "recetario-2114-50",
-      "name": "Recetario 21 × 14 cm · 50 unidades",
-      "category": "Recetarios / Tacos / Blocks",
-      "price": 7000,
+      ],
+      "name": "Taco 16 × 6 cm",
+      "featured": false,
       "desc": "Personalizado.",
-      "image": "/assets/uploads/1000170804.jpg",
-      "featured": false
+      "id": "taco-166-50",
+      "image": "",
+      "category": "Recetarios / Tacos / Blocks"
     },
     {
-      "id": "taco-a4-50",
-      "name": "Taco A4 · 50 unidades",
-      "category": "Recetarios / Tacos / Blocks",
+      "hasQuantity": true,
+      "price": 7000,
+      "quantities": [
+        {
+          "label": "50 Hojas",
+          "price": 7000
+        },
+        {
+          "label": "100 hojas",
+          "price": 14000
+        }
+      ],
+      "name": "Recetario 21 × 14 cm ",
+      "featured": false,
+      "desc": "Perfecto para recetarios médicos. Completamente Personalizado.",
+      "id": "recetario-2114-50",
+      "image": "/assets/uploads/1000170804.jpg",
+      "category": "Recetarios / Tacos / Blocks"
+    },
+    {
+      "hasQuantity": true,
       "price": 8990,
+      "quantities": [
+        {
+          "label": "50 Hojas",
+          "price": 8990
+        },
+        {
+          "label": "100 Hojas",
+          "price": 16990
+        }
+      ],
+      "name": "Taco A4 ",
+      "featured": false,
       "desc": "Personalizado como tú quieras ",
+      "id": "taco-a4-50",
       "image": "",
-      "featured": false
+      "category": "Recetarios / Tacos / Blocks"
     },
     {
       "id": "tags-simple-50",
