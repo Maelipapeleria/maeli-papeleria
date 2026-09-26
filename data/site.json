@@ -48,22 +48,22 @@
         {
           "title": "Perfecto para regalo",
           "image": "/assets/uploads/1000171923.png",
-          "target": "catalogo"
+          "target": "Kits"
         },
         {
           "title": "Cuadernos y libretas",
           "image": "/assets/uploads/img-20260923-wa0025.jpg",
-          "target": "catalogo"
+          "target": "Agendas"
         },
         {
           "title": "Botellas y vasos",
           "image": "/assets/uploads/1000171924.png",
-          "target": "catalogo"
+          "target": "Tazas y botellas "
         },
         {
           "title": "Productos personalizados",
           "image": "/assets/uploads/1000171925.png",
-          "target": "catalogo"
+          "target": "Sublimación "
         }
       ]
     },
