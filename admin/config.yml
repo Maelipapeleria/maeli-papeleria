@@ -35,8 +35,6 @@ collections:
                 fields:
                   - { label: Cantidad, name: label, widget: string, hint: "Ejemplo: 50 hojas" }
                   - { label: Precio, name: price, widget: number, value_type: int, min: 0 }
-              - { label: Grupo de cantidad (compatibilidad), name: groupId, widget: string, required: false, hidden: true }
-              - { label: Cantidad del grupo (compatibilidad), name: quantity, widget: number, required: false, hidden: true }
           - label: Extras de agenda
             name: agendaExtras
             widget: list
