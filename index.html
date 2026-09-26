@@ -180,13 +180,50 @@ function $(s){return document.querySelector(s)}
 function money(n){return "$"+Number(n||0).toLocaleString("es-CL")}
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(m){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]})}
 function groupByQuantity(list){
- var groups={},out=[];
- list.forEach(function(p){var m=String(p.name||"").match(/^(.*?)[ ·-]+(50|100)(?:\s+unidades?)?$/i);
-  if(m){var key=(p.category+"|"+m[1]).toLowerCase();(groups[key]||(groups[key]=[])).push(p)}else out.push(p);
+ var out=[],legacyGroups={};
+ list.forEach(function(p){
+  if(p.hasQuantity && Array.isArray(p.quantities) && p.quantities.length){
+   out.push({
+    group:true,
+    id:"qty-"+p.id,
+    name:p.name,
+    category:p.category,
+    desc:p.desc,
+    image:p.image||"",
+    variants:p.quantities.map(function(q,i){
+      return {
+       id:p.id+"-qty-"+i,
+       name:p.name+" · "+q.label,
+       quantityLabel:q.label,
+       price:Number(q.price||0),
+       category:p.category,
+       desc:p.desc,
+       image:p.image||""
+      };
+    })
+   });
+   return;
+  }
+  var m=String(p.name||"").match(/^(.*?)[ ·-]+(50|100)(?:\s+unidades?)?$/i);
+  if(m){
+   var key=(p.category+"|"+m[1]).toLowerCase();
+   (legacyGroups[key]||(legacyGroups[key]=[])).push(p);
+  }else out.push(p);
  });
- Object.keys(groups).forEach(function(k){var v=groups[k];v.sort(function(a,b){var ma=String(a.name).match(/(50|100)(?:\s+unidades?)?$/i),mb=String(b.name).match(/(50|100)(?:\s+unidades?)?$/i);return Number(ma?ma[1]:0)-Number(mb?mb[1]:0)});
-  out.push({group:true,id:"qty-"+v[0].id,name:String(v[0].name).replace(/\s*[·-]+\s*(50|100)(?:\s+unidades?)?$/i,""),category:v[0].category,desc:v[0].desc,image:v.find(function(x){return x.image})?.image||"",variants:v});
- });return out;
+ Object.keys(legacyGroups).forEach(function(k){
+  var v=legacyGroups[k];
+  v.sort(function(a,b){
+   var ma=String(a.name).match(/(50|100)(?:\s+unidades?)?$/i),mb=String(b.name).match(/(50|100)(?:\s+unidades?)?$/i);
+   return Number(ma?ma[1]:0)-Number(mb?mb[1]:0);
+  });
+  out.push({
+   group:true,id:"qty-"+v[0].id,
+   name:String(v[0].name).replace(/\s*[·-]+\s*(50|100)(?:\s+unidades?)?$/i,""),
+   category:v[0].category,desc:v[0].desc,
+   image:v.find(function(x){return x.image})?.image||"",variants:v
+  });
+ });
+ return out;
 }
 function card(p){var price=p.group?money(p.variants[0].price):money(p.price),img=p.image?'<img src="'+p.image+'" alt="'+esc(p.name)+'">':'<div style="height:100%;display:grid;place-items:center;font-size:40px">✦</div>';
  return '<article class="card" data-product-id="'+esc(p.id)+'"><div class="photo">'+img+'<button class="wish" type="button" aria-label="Favorito">♡</button><button class="view" type="button" data-action="detail">Ver detalle</button></div><div class="info"><h3 class="name">'+esc(p.name)+'</h3><div class="price">'+price+(p.group?' <small style="font-size:11px;color:#777;font-weight:400">desde</small>':'')+'</div><button class="buy" type="button" data-action="detail">Ver opciones</button><div class="dots"><i class="dot d1"></i><i class="dot d2"></i><i class="dot d3"></i><i class="dot d4"></i></div></div></article>';
