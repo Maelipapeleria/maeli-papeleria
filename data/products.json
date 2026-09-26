@@ -145,15 +145,6 @@
       "featured": false
     },
     {
-      "id": "recetario-2114-100",
-      "name": "Recetario 21 × 14 cm · 100 unidades",
-      "category": "Recetarios / Tacos / Blocks",
-      "price": 11990,
-      "desc": "Personalizado.",
-      "image": "/assets/uploads/1000170805.jpg",
-      "featured": false
-    },
-    {
       "id": "taco-a4-50",
       "name": "Taco A4 · 50 unidades",
       "category": "Recetarios / Tacos / Blocks",
@@ -172,15 +163,6 @@
       "featured": false
     },
     {
-      "id": "tags-simple-100",
-      "name": "Tags simples · 100 unidades",
-      "category": "Tags",
-      "price": 9990,
-      "desc": "Papel grueso opalina.",
-      "image": "",
-      "featured": false
-    },
-    {
       "id": "tags-doble-pequeno-50",
       "name": "Tags doble (simple + pequeño) · 50 unidades",
       "category": "Tags",
@@ -190,28 +172,10 @@
       "featured": false
     },
     {
-      "id": "tags-doble-pequeno-100",
-      "name": "Tags doble (simple + pequeño) · 100 unidades",
-      "category": "Tags",
-      "price": 10990,
-      "desc": "Papel grueso opalina.",
-      "image": "",
-      "featured": false
-    },
-    {
       "id": "tags-doble-forma-50",
       "name": "Tags doble (simple + forma) · 50 unidades",
       "category": "Tags",
       "price": 9000,
-      "desc": "Papel grueso opalina.",
-      "image": "",
-      "featured": false
-    },
-    {
-      "id": "tags-doble-forma-100",
-      "name": "Tags doble (simple + forma) · 100 unidades",
-      "category": "Tags",
-      "price": 15990,
       "desc": "Papel grueso opalina.",
       "image": "",
       "featured": false
@@ -226,28 +190,10 @@
       "featured": false
     },
     {
-      "id": "tarjeta-fid-1-100",
-      "name": "Tarjeta fidelidad 1 cara + 200 stickers · 100",
-      "category": "Tarjetas",
-      "price": 12990,
-      "desc": "Papel grueso opalina.",
-      "image": "",
-      "featured": false
-    },
-    {
       "id": "tarjeta-fid-2-50",
       "name": "Tarjeta fidelidad doble cara + 200 stickers · 50",
       "category": "Tarjetas",
       "price": 8990,
-      "desc": "Papel grueso opalina.",
-      "image": "",
-      "featured": false
-    },
-    {
-      "id": "tarjeta-fid-2-100",
-      "name": "Tarjeta fidelidad doble cara + 200 stickers · 100",
-      "category": "Tarjetas",
-      "price": 14990,
       "desc": "Papel grueso opalina.",
       "image": "",
       "featured": false
@@ -262,28 +208,10 @@
       "featured": false
     },
     {
-      "id": "tarjeta-pres-1-100",
-      "name": "Tarjeta presentación 1 cara · 100",
-      "category": "Tarjetas",
-      "price": 9990,
-      "desc": "Papel grueso opalina mate o glossy.",
-      "image": "",
-      "featured": false
-    },
-    {
       "id": "tarjeta-pres-2-50",
       "name": "Tarjeta presentación doble cara · 50",
       "category": "Tarjetas",
       "price": 8000,
-      "desc": "Papel grueso opalina mate o glossy.",
-      "image": "/assets/uploads/1000170806.jpg",
-      "featured": false
-    },
-    {
-      "id": "tarjeta-pres-2-100",
-      "name": "Tarjeta presentación doble cara · 100",
-      "category": "Tarjetas",
-      "price": 14000,
       "desc": "Papel grueso opalina mate o glossy.",
       "image": "/assets/uploads/1000170806.jpg",
       "featured": false
@@ -298,28 +226,10 @@
       "featured": false
     },
     {
-      "id": "flyer-1317-100",
-      "name": "Flyer 13 × 17 cm · 100 unidades",
-      "category": "Flyers",
-      "price": 12990,
-      "desc": "Impresión una cara.",
-      "image": "",
-      "featured": false
-    },
-    {
       "id": "flyer-98123-50",
       "name": "Flyer 9,8 × 12,3 cm · 50 unidades",
       "category": "Flyers",
       "price": 5990,
-      "desc": "Impresión una cara.",
-      "image": "",
-      "featured": false
-    },
-    {
-      "id": "flyer-98123-100",
-      "name": "Flyer 9,8 × 12,3 cm · 100 unidades",
-      "category": "Flyers",
-      "price": 10990,
       "desc": "Impresión una cara.",
       "image": "",
       "featured": false
@@ -330,33 +240,6 @@
       "category": "Tarjetas especiales",
       "price": 9000,
       "desc": "8 cm información / 10 cm contando la forma.",
-      "image": "",
-      "featured": false
-    },
-    {
-      "id": "abre-1-100",
-      "name": "Tarjeta abre y cierra · Tipo 1 · 100",
-      "category": "Tarjetas especiales",
-      "price": 16000,
-      "desc": "8 cm información / 10 cm contando la forma.",
-      "image": "",
-      "featured": false
-    },
-    {
-      "id": "abre-2-50",
-      "name": "Tarjeta abre y cierra · Tipo 2 · 50",
-      "category": "Tarjetas especiales",
-      "price": 12000,
-      "desc": "14 cm información / 17 cm contando la forma.",
-      "image": "",
-      "featured": false
-    },
-    {
-      "id": "abre-2-100",
-      "name": "Tarjeta abre y cierra · Tipo 2 · 100",
-      "category": "Tarjetas especiales",
-      "price": 19000,
-      "desc": "14 cm información / 17 cm contando la forma.",
       "image": "",
       "featured": false
     },
@@ -561,26 +444,13 @@
       "category": "Celebraciones"
     },
     {
+      "featured": false,
+      "id": "Estuche-lona",
+      "name": "Estuche / cosmetiquero",
+      "category": "Sublimación ",
       "price": 3000,
-      "quantity": 10,
-      "name": "Mini toppers personalizados",
-      "featured": false,
-      "desc": "Mini toppers personalizados de 5 × 5 cm aprox. Pack de 10 unidades.",
-      "groupId": "mini-toppers",
-      "id": "mini-toppers-10",
-      "image": "",
-      "category": "Celebraciones"
-    },
-    {
-      "price": 5000,
-      "quantity": 20,
-      "name": "Mini toppers personalizados",
-      "featured": false,
-      "desc": "Mini toppers personalizados de 5 × 5 cm aprox. Pack de 20 unidades.",
-      "groupId": "mini-toppers",
-      "id": "mini-toppers-20",
-      "image": "",
-      "category": "Celebraciones"
+      "desc": "Estuche personalizado con la imagen que tú quieras ",
+      "image": "/assets/uploads/1000172553.png"
     }
   ],
   "agendaExtras": [
