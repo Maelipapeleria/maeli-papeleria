@@ -271,8 +271,6 @@ function render(){
  }
  $("#newArrivalsTitle").textContent=q?"Resultados de búsqueda":(site.homepage?.newArrivalsTitle||"Nuevos productos");
  $("#products").innerHTML=filtered.map(card).join("");
- var cats=["Todos"];products.forEach(function(p){if(cats.indexOf(p.category)<0)cats.push(p.category)});
- $("#filters").innerHTML=cats.map(function(c){return '<button type="button" class="filter '+(c===activeCategory?"active":"")+'" data-cat="'+esc(c)+'">'+esc(c)+"</button>"}).join("");
  $("#count").textContent=cart.length;
 }
 
