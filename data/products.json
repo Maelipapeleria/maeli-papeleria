@@ -365,11 +365,11 @@
       "price": 4000,
       "quantities": [
         {
-          "label": "50 unidades",
+          "label": "50 hojas",
           "price": 4000
         },
         {
-          "label": "100 unidades",
+          "label": "100 hojas ",
           "price": 7500
         }
       ],
@@ -377,7 +377,7 @@
       "featured": false,
       "desc": "Personalizado.",
       "id": "taco-166-50",
-      "image": "",
+      "image": "/assets/uploads/1000172677.jpg",
       "category": "Papelería "
     },
     {
@@ -437,7 +437,7 @@
       "featured": false,
       "desc": "Papel grueso opalina.",
       "id": "tags-simple-50",
-      "image": "",
+      "image": "/assets/uploads/1000172675.jpg",
       "category": "Papelería "
     },
     {
@@ -449,7 +449,7 @@
           "price": 7000
         },
         {
-          "label": "100",
+          "label": "100 unid",
           "price": 13000
         }
       ],
@@ -457,7 +457,7 @@
       "featured": false,
       "desc": "Perfecto para prendas de ropa.",
       "id": "tags-doble-pequeno-50",
-      "image": "/assets/uploads/1000170807.jpg",
+      "image": "/assets/uploads/1000172674.jpg",
       "category": "Papelería "
     },
     {
@@ -477,7 +477,7 @@
       "featured": false,
       "desc": "Papel grueso opalina.",
       "id": "tags-doble-forma-50",
-      "image": "",
+      "image": "/assets/uploads/1000172676.jpg",
       "category": "Papelería "
     },
     {
@@ -497,7 +497,7 @@
       "featured": false,
       "desc": "Tarjetas de fidelidad para tus clientes ",
       "id": "tarjeta-fid-1-50",
-      "image": "",
+      "image": "/assets/uploads/1000172673.jpg",
       "category": "Tarjetas"
     },
     {
@@ -517,7 +517,7 @@
       "featured": false,
       "desc": "Papel grueso opalina.",
       "id": "tarjeta-fid-2-50",
-      "image": "",
+      "image": "/assets/uploads/1000172672.jpg",
       "category": "Papelería "
     },
     {
@@ -537,7 +537,7 @@
       "featured": false,
       "desc": "Papel grueso opalina mate o glossy.",
       "id": "tarjeta-pres-1-50",
-      "image": "",
+      "image": "/assets/uploads/1000172681.jpg",
       "category": "Papelería "
     },
     {
@@ -577,7 +577,7 @@
       "featured": false,
       "desc": "Impresión una cara.",
       "id": "flyer-1317-50",
-      "image": "",
+      "image": "/assets/uploads/1000172671.jpg",
       "category": "Papelería "
     },
     {
@@ -597,8 +597,18 @@
       "featured": false,
       "desc": "8 cm información / 10 cm contando la forma.",
       "id": "abre-1-50",
-      "image": "",
+      "image": "/assets/uploads/1000172679.jpg",
       "category": "Papelería "
+    },
+    {
+      "featured": false,
+      "hasQuantity": false,
+      "id": "Llavero-plastic",
+      "name": "Llavero Doble cara ",
+      "category": "Sublimación ",
+      "price": 2000,
+      "desc": "Llavero doble cara forma rectangular ",
+      "image": "/assets/uploads/1000172579.png"
     }
   ],
   "agendaExtras": [
