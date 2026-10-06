@@ -649,6 +649,16 @@
       "image": "/assets/uploads/1000174189.png",
       "id": "Kit4",
       "name": "Vaso térmico + Pantuflas "
+    },
+    {
+      "featured": false,
+      "hasQuantity": false,
+      "id": "Kit5",
+      "name": "Vuelta a Clases",
+      "category": "Kits",
+      "price": 7500,
+      "desc": "Botella + Marcador de Mochila + 20 stickers para Útiles, personalizado con el diseño y nombre que desees.",
+      "image": "/assets/uploads/1000174187.png"
     }
   ],
   "agendaExtras": [
