@@ -639,6 +639,16 @@
       "price": 7000,
       "id": "Kit3",
       "desc": "En este kit encontrarás 2 tazones 11oz todo completamente personalizado.\nDisponible diseño \"Cafecito y Chisme\" 🌸\n"
+    },
+    {
+      "featured": false,
+      "hasQuantity": false,
+      "category": "Kits",
+      "price": 14000,
+      "desc": "Vaso térmico+ pantuflas personalizadas\nDiseño disponible  \"que la fuerza te acompañe y el café también\"",
+      "image": "/assets/uploads/1000174189.png",
+      "id": "Kit4",
+      "name": "Vaso térmico + Pantuflas "
     }
   ],
   "agendaExtras": [
