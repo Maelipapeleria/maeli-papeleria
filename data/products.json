@@ -321,16 +321,6 @@
       "hasQuantity": false
     },
     {
-      "price": 1800,
-      "name": "Mini toppers personalizados",
-      "featured": false,
-      "desc": "Mini toppers personalizados de 5 × 5 cm aprox. Pack de 5 unidades.",
-      "id": "mini-toppers-5",
-      "image": "",
-      "category": "Celebraciones",
-      "hasQuantity": false
-    },
-    {
       "featured": false,
       "id": "Estuche-lona",
       "name": "Estuche / cosmetiquero",
@@ -338,6 +328,16 @@
       "price": 3000,
       "desc": "Estuche personalizado con la imagen que tú quieras ",
       "image": "/assets/uploads/1000172553.png",
+      "hasQuantity": false
+    },
+    {
+      "price": 1800,
+      "name": "Mini toppers personalizados",
+      "featured": false,
+      "desc": "Mini toppers personalizados de 5 × 5 cm aprox. Pack de 5 unidades.",
+      "id": "mini-toppers-5",
+      "image": "",
+      "category": "Celebraciones",
       "hasQuantity": false
     },
     {
@@ -522,6 +522,26 @@
     },
     {
       "hasQuantity": true,
+      "price": 6990,
+      "quantities": [
+        {
+          "label": "50 unid",
+          "price": 6990
+        },
+        {
+          "label": "100 unid",
+          "price": 14000
+        }
+      ],
+      "name": "Flyer 13 × 17 cm ",
+      "featured": false,
+      "desc": "Impresión una cara.",
+      "id": "flyer-1317-50",
+      "image": "/assets/uploads/1000172671.jpg",
+      "category": "Papelería "
+    },
+    {
+      "hasQuantity": true,
       "price": 7000,
       "quantities": [
         {
@@ -558,26 +578,6 @@
       "desc": "Papel grueso opalina mate o glossy.",
       "id": "tarjeta-pres-2-50",
       "image": "/assets/uploads/1000170806.jpg",
-      "category": "Papelería "
-    },
-    {
-      "hasQuantity": true,
-      "price": 6990,
-      "quantities": [
-        {
-          "label": "50 unid",
-          "price": 6990
-        },
-        {
-          "label": "100 unid",
-          "price": 14000
-        }
-      ],
-      "name": "Flyer 13 × 17 cm ",
-      "featured": false,
-      "desc": "Impresión una cara.",
-      "id": "flyer-1317-50",
-      "image": "/assets/uploads/1000172671.jpg",
       "category": "Papelería "
     },
     {
@@ -668,6 +668,16 @@
       "category": "Kits",
       "price": 5500,
       "desc": "Set de 50 stickers para rotular útiles escolares. Puedes colocar el diseño y nombre que tú peque quiera!\nContiene:\n25 adhesivos para Lápices \n10 Adhesivos para cuadernos\n10 Adhesivos para Libros \n5 adhesivos para accesorios \n1 Horario de clases "
+    },
+    {
+      "featured": false,
+      "hasQuantity": false,
+      "name": "Libreta + Lápiz ",
+      "category": "Kits",
+      "price": 3000,
+      "image": "/assets/uploads/1000173982.png",
+      "desc": "Libreta de 30 hojas + bolígrafo personalizado \n",
+      "id": "Kit7"
     }
   ],
   "agendaExtras": [
