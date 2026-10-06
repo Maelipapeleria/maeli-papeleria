@@ -609,6 +609,36 @@
       "price": 2000,
       "desc": "Llavero doble cara forma rectangular ",
       "image": "/assets/uploads/1000172579.png"
+    },
+    {
+      "featured": false,
+      "hasQuantity": false,
+      "image": "/assets/uploads/1000174131.png",
+      "category": "Kits ",
+      "price": 7500,
+      "name": "Tazón, Estuche & Libreta",
+      "desc": "En este kit encontrarás tazón 11oz + estuche+ libreta todo completamente personalizado.\n¡ Perfecto para celebraciones!",
+      "id": "Kit1"
+    },
+    {
+      "featured": false,
+      "hasQuantity": false,
+      "id": "Kit2",
+      "image": "/assets/uploads/1000174135.png",
+      "price": 6500,
+      "desc": "En este kit encontrarás tazón 11oz + estuche completamente personalizado.🌸\n¡ Perfecto para celebraciones!",
+      "name": "Tazón & Estuche",
+      "category": "Kits"
+    },
+    {
+      "featured": false,
+      "hasQuantity": false,
+      "image": "/assets/uploads/1000174137.png",
+      "name": "Kit Mejores Amigas",
+      "category": "Kits",
+      "price": 7000,
+      "id": "Kit3",
+      "desc": "En este kit encontrarás 2 tazones 11oz todo completamente personalizado.\nDisponible diseño \"Cafecito y Chisme\" 🌸\n"
     }
   ],
   "agendaExtras": [
