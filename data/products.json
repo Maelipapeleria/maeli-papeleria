@@ -659,6 +659,15 @@
       "price": 7500,
       "desc": "Botella + Marcador de Mochila + 20 stickers para Útiles, personalizado con el diseño y nombre que desees.",
       "image": "/assets/uploads/1000174187.png"
+    },
+    {
+      "featured": false,
+      "hasQuantity": false,
+      "id": "Kit6",
+      "name": "Marcador Escolar ",
+      "category": "Kits",
+      "price": 5500,
+      "desc": "Set de 50 stickers para rotular útiles escolares. Puedes colocar el diseño y nombre que tú peque quiera!\nContiene:\n25 adhesivos para Lápices \n10 Adhesivos para cuadernos\n10 Adhesivos para Libros \n5 adhesivos para accesorios \n1 Horario de clases "
     }
   ],
   "agendaExtras": [
