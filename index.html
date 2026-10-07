@@ -141,6 +141,12 @@ main{width:100%;margin:0;padding:24px 24px 50px}.sectionHead{display:flex;justif
  .homeCategoryGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
  .homeCategoryCard,.homeCategoryCard img{min-height:235px}
 }
+</style>
+<style>
+/* Fondo rosado de la parte superior de la portada */
+.header{background:var(--soft)}
+.newProductsSection{background:var(--soft);margin:-24px -24px 0;padding:24px}
+@media(max-width:600px){.newProductsSection{margin:-18px -12px 0;padding:18px 12px}}
 </style></head>
 <body>
 <div class="top"><span>🚚 Envíos a todo Chile</span><span>|</span><span>Diseño · Impresión · Personalización</span><span>|</span><a href="https://www.instagram.com/maelipapeleria/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">Síguenos&nbsp;&nbsp; Instagram&nbsp;&nbsp; TikTok</a></div>
@@ -155,7 +161,7 @@ main{width:100%;margin:0;padding:24px 24px 50px}.sectionHead{display:flex;justif
 <main id="inicio">
 <section id="heroHome" class="homeHero" style="display:none"></section>
 <section id="promoHome" class="homePromo" style="display:none"></section>
-<section><div class="sectionHead"><h1 class="title"><span class="heart">♥</span><span id="newArrivalsTitle">Recién llegados</span></h1><a class="all" href="#catalogo">VER TODOS&nbsp; →</a></div><div class="grid" id="featured"></div></section>
+<section class="newProductsSection"><div class="sectionHead"><h1 class="title"><span class="heart">♥</span><span id="newArrivalsTitle">Recién llegados</span></h1><a class="all" href="#catalogo">VER TODOS&nbsp; →</a></div><div class="grid" id="featured"></div></section>
 <section class="homeCategories" id="homeCategories"><div class="sectionHead"><div><h2 class="title" id="categorySectionTitle">Encuentra tu idea perfecta</h2><p id="categorySectionSubtitle" style="margin:6px 0 0;color:#777"></p></div></div><div class="homeCategoryGrid" id="homeCategoryGrid"></div></section>
 <section class="bannerArea" id="banners"><div class="sectionHead"><h2 class="title">Celebraciones</h2></div><div class="banners"><a class="banner" id="celebraciones"><div class="fallback"><h3>Celebraciones MAELI</h3><p>Detalles personalizados para cada momento</p></div></a><a class="banner" id="halloween"><div class="fallback"><h3>Halloween en MAELI</h3><p>Kits personalizados para celebrar</p></div></a></div></section>
 <section class="catalog" id="catalogo"><div class="sectionHead"><h2 class="title">Todos nuestros productos</h2></div><div class="grid" id="products"></div></section>
