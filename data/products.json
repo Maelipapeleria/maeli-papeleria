@@ -581,6 +581,16 @@
       "category": "Papelería "
     },
     {
+      "featured": false,
+      "hasQuantity": false,
+      "id": "Llavero-plastic",
+      "name": "Llavero Doble cara ",
+      "category": "Sublimación ",
+      "price": 2000,
+      "desc": "Llavero doble cara forma rectangular ",
+      "image": "/assets/uploads/1000172579.png"
+    },
+    {
       "hasQuantity": true,
       "price": 12000,
       "quantities": [
@@ -599,16 +609,6 @@
       "id": "abre-1-50",
       "image": "/assets/uploads/1000172679.jpg",
       "category": "Papelería "
-    },
-    {
-      "featured": false,
-      "hasQuantity": false,
-      "id": "Llavero-plastic",
-      "name": "Llavero Doble cara ",
-      "category": "Sublimación ",
-      "price": 2000,
-      "desc": "Llavero doble cara forma rectangular ",
-      "image": "/assets/uploads/1000172579.png"
     },
     {
       "featured": false,
@@ -674,7 +674,7 @@
       "hasQuantity": false,
       "name": "Libreta + Lápiz ",
       "category": "Kits",
-      "price": 3000,
+      "price": 3500,
       "image": "/assets/uploads/1000173982.png",
       "desc": "Libreta de 30 hojas + bolígrafo personalizado \n",
       "id": "Kit7"
