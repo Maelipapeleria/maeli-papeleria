@@ -727,34 +727,29 @@
       "category": "Stock",
       "price": 1000,
       "id": "Marcapaginasrosa",
-      "desc": "Disponible en stock de la tienda para entrega inmediata"
-    },
-    {
-      "featured": false,
-      "image": "/assets/uploads/img-20261011-wa0027.jpg",
-      "category": "Stock",
-      "price": 1000,
-      "name": "Marcapáginas Fantasmas negro",
-      "id": "marcapaginasboo",
-      "desc": "Disponible en stock de la tienda para entrega inmediata"
-    },
-    {
-      "featured": false,
-      "name": "Marcapáginas Fantasmas naranjo",
-      "image": "/assets/uploads/img-20261011-wa0023.jpg",
-      "category": "Stock",
-      "price": 1000,
       "desc": "Disponible en stock de la tienda para entrega inmediata",
-      "id": "marcapaginasfantasmanaranjo"
-    },
-    {
-      "featured": false,
-      "image": "/assets/uploads/img-20261011-wa0022.jpg",
-      "name": "Marcapáginas Calabazas",
-      "category": "Stock",
-      "price": 1000,
-      "id": "marcapaginascalabazaa",
-      "desc": "Disponible en stock de la tienda para entrega inmediata"
+      "designs": [
+        {
+          "image": "/assets/uploads/1000174139.png",
+          "price": 1000,
+          "name": "Marcapáginas Fantasmas Negro "
+        },
+        {
+          "image": "/assets/uploads/1000174144.png",
+          "name": "Marcapáginas Calavera negro",
+          "price": 1000
+        },
+        {
+          "image": "/assets/uploads/1000174145.png",
+          "name": "Marcapáginas Calabazas ",
+          "price": 1000
+        },
+        {
+          "image": "/assets/uploads/1000174146.png",
+          "name": "Marcapáginas Fantasmas Naranja ",
+          "price": 1000
+        }
+      ]
     }
   ],
   "agendaExtras": [
