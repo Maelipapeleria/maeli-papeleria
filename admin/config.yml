@@ -24,6 +24,15 @@ collections:
               - { label: Precio, name: price, widget: number }
               - { label: Descripción, name: desc, widget: text }
               - { label: Imagen, name: image, widget: image, required: false }
+              - label: Opciones de diseño (opcional)
+                name: designs
+                widget: list
+                required: false
+                hint: "Agrega cada diseño con su propia imagen, nombre y precio. Se mostrará como una miniatura dentro del producto."
+                fields:
+                  - { label: Nombre del diseño, name: name, widget: string }
+                  - { label: Imagen del diseño, name: image, widget: image }
+                  - { label: Precio del diseño, name: price, widget: number, value_type: int, min: 0 }
               - { label: Mostrar en “Recién llegados”, name: featured, widget: boolean, default: false }
               - { label: Activar opciones de cantidad, name: hasQuantity, widget: boolean, default: false, hint: "Actívalo si este producto tendrá opciones como 50 hojas, 100 hojas, etc." }
               - label: Opciones de cantidad
