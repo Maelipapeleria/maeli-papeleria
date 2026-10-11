@@ -689,6 +689,26 @@
       "price": 1000,
       "id": "Marcapag ",
       "desc": "Marcapáginas magnéticos "
+    },
+    {
+      "featured": false,
+      "hasQuantity": false,
+      "image": "/assets/uploads/1000174789.jpg",
+      "name": "Bolígrafo personalizado ",
+      "category": "Accesorios ",
+      "price": 1000,
+      "id": "Boligrafoper ",
+      "desc": "Bolígrafo personalizado "
+    },
+    {
+      "featured": false,
+      "hasQuantity": false,
+      "id": "Bolitarjeta",
+      "name": "Bolígrafo personalizado con tarjeta ",
+      "category": "Accesorios ",
+      "price": 1300,
+      "desc": "Bolígrafo con tarjeta completamente personalizada como tú quieras para cualquier ocasión.",
+      "image": "/assets/uploads/1000174788.jpg"
     }
   ],
   "agendaExtras": [
