@@ -679,6 +679,16 @@
       "image": "/assets/uploads/1000173982.png",
       "desc": "Libreta de 30 hojas + bolígrafo personalizado \n",
       "id": "Kit7"
+    },
+    {
+      "featured": false,
+      "hasQuantity": false,
+      "image": "/assets/uploads/1000174322.png",
+      "name": "Marcapáginas magnéticos ",
+      "category": "Accesorios ",
+      "price": 1000,
+      "id": "Marcapag ",
+      "desc": "Marcapáginas magnéticos "
     }
   ],
   "agendaExtras": [
