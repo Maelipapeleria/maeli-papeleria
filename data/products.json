@@ -709,6 +709,16 @@
       "price": 1300,
       "desc": "Bolígrafo con tarjeta completamente personalizada como tú quieras para cualquier ocasión.",
       "image": "/assets/uploads/1000174788.jpg"
+    },
+    {
+      "featured": false,
+      "hasQuantity": false,
+      "image": "/assets/uploads/1000174330.png",
+      "name": "Libretas",
+      "category": "Accesorios ",
+      "price": 1000,
+      "desc": "Libreta de 12 páginas con hojas blancas o puntitos",
+      "id": "Libreta12hojas"
     }
   ],
   "agendaExtras": [
