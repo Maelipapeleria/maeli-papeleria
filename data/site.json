@@ -39,6 +39,11 @@
       "label": "KITS ",
       "target": "Kits",
       "active": true
+    },
+    {
+      "active": true,
+      "label": "ENTREGA INMEDIATA",
+      "target": "Stock"
     }
   ],
   "homepage": {
