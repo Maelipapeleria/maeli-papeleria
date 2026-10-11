@@ -442,26 +442,6 @@
     },
     {
       "hasQuantity": true,
-      "price": 7000,
-      "quantities": [
-        {
-          "label": "50 unid",
-          "price": 7000
-        },
-        {
-          "label": "100 unid",
-          "price": 13000
-        }
-      ],
-      "name": "Tags doble (simple + pequeño) · ",
-      "featured": false,
-      "desc": "Perfecto para prendas de ropa.",
-      "id": "tags-doble-pequeno-50",
-      "image": "/assets/uploads/1000172674.jpg",
-      "category": "Papelería "
-    },
-    {
-      "hasQuantity": true,
       "price": 9000,
       "quantities": [
         {
@@ -478,6 +458,26 @@
       "desc": "Papel grueso opalina.",
       "id": "tags-doble-forma-50",
       "image": "/assets/uploads/1000172676.jpg",
+      "category": "Papelería "
+    },
+    {
+      "hasQuantity": true,
+      "price": 7000,
+      "quantities": [
+        {
+          "label": "50 unid",
+          "price": 7000
+        },
+        {
+          "label": "100 unid",
+          "price": 13000
+        }
+      ],
+      "name": "Tags doble (simple + pequeño) · ",
+      "featured": false,
+      "desc": "Perfecto para prendas de ropa.",
+      "id": "tags-doble-pequeno-50",
+      "image": "/assets/uploads/1000172674.jpg",
       "category": "Papelería "
     },
     {
@@ -561,6 +561,16 @@
       "category": "Papelería "
     },
     {
+      "featured": false,
+      "hasQuantity": false,
+      "image": "/assets/uploads/1000174131.png",
+      "category": "Kits ",
+      "price": 7500,
+      "name": "Tazón, Estuche & Libreta",
+      "desc": "En este kit encontrarás tazón 11oz + estuche+ libreta todo completamente personalizado.\n¡ Perfecto para celebraciones!",
+      "id": "Kit1"
+    },
+    {
       "hasQuantity": true,
       "price": 8000,
       "quantities": [
@@ -609,16 +619,6 @@
       "id": "abre-1-50",
       "image": "/assets/uploads/1000172679.jpg",
       "category": "Papelería "
-    },
-    {
-      "featured": false,
-      "hasQuantity": false,
-      "image": "/assets/uploads/1000174131.png",
-      "category": "Kits ",
-      "price": 7500,
-      "name": "Tazón, Estuche & Libreta",
-      "desc": "En este kit encontrarás tazón 11oz + estuche+ libreta todo completamente personalizado.\n¡ Perfecto para celebraciones!",
-      "id": "Kit1"
     },
     {
       "featured": false,
@@ -719,6 +719,42 @@
       "price": 1000,
       "desc": "Libreta de 12 páginas con hojas blancas o puntitos",
       "id": "Libreta12hojas"
+    },
+    {
+      "featured": false,
+      "image": "/assets/uploads/img-20261011-wa0021.jpg",
+      "name": "Marcapáginas Rosa",
+      "category": "Stock",
+      "price": 1000,
+      "id": "Marcapaginasrosa",
+      "desc": "Disponible en stock de la tienda para entrega inmediata"
+    },
+    {
+      "featured": false,
+      "image": "/assets/uploads/img-20261011-wa0027.jpg",
+      "category": "Stock",
+      "price": 1000,
+      "name": "Marcapáginas Fantasmas negro",
+      "id": "marcapaginasboo",
+      "desc": "Disponible en stock de la tienda para entrega inmediata"
+    },
+    {
+      "featured": false,
+      "name": "Marcapáginas Fantasmas naranjo",
+      "image": "/assets/uploads/img-20261011-wa0023.jpg",
+      "category": "Stock",
+      "price": 1000,
+      "desc": "Disponible en stock de la tienda para entrega inmediata",
+      "id": "marcapaginasfantasmanaranjo"
+    },
+    {
+      "featured": false,
+      "image": "/assets/uploads/img-20261011-wa0022.jpg",
+      "name": "Marcapáginas Calabazas",
+      "category": "Stock",
+      "price": 1000,
+      "id": "marcapaginascalabazaa",
+      "desc": "Disponible en stock de la tienda para entrega inmediata"
     }
   ],
   "agendaExtras": [
