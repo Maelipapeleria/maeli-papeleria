@@ -1,0 +1,6 @@
+{
+  "name": "Disponible en tienda",
+  "slug": "stock",
+  "showInMenu": true,
+  "order": 7
+}
