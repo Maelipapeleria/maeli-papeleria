@@ -1,6 +1,11 @@
 {
   "navigation": [
     {
+      "active": true,
+      "label": "DISPONIBLE EN TIENDA",
+      "target": "stock"
+    },
+    {
       "label": "INICIO",
       "target": "inicio",
       "active": true
@@ -39,11 +44,6 @@
       "label": "KITS ",
       "target": "kits",
       "active": true
-    },
-    {
-      "active": true,
-      "label": "DISPONIBLE EN TIENDA",
-      "target": "stock"
     }
   ],
   "homepage": {
