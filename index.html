@@ -184,14 +184,20 @@ main{width:100%;margin:0;padding:24px 24px 50px}.sectionHead{display:flex;justif
 var products=[],cart=[],activeCategory="Todos",detailItem=null,stockDesignItems=[],agendaExtras=[],site={navigation:[],homepage:{}};
 function normalizeText(s){return String(s==null?"":s).trim().toLowerCase().normalize("NFD").replace(/[\\u0300-\\u036f]/g,"")}
 function categoryMatches(p,cat){
- var wanted=normalizeText(cat),actual=normalizeText(p.category);
+ var wanted=normalizeText(cat),values=Array.isArray(p.categories)?p.categories.slice():[];
+ if(p.category)values.push(p.category);
+ var actuals=values.map(normalizeText).filter(Boolean);
  if(!wanted||wanted==="todos")return true;
- if(wanted==="agendas")return actual.indexOf("agendas")===0;
- if(wanted==="papeleria")return actual.indexOf("papeleria")===0||actual==="tarjetas";
- if(wanted==="sublimacion")return actual.indexOf("sublimacion")===0;
- if(wanted==="stickers")return actual.indexOf("stickers")===0;
- if(wanted==="kits"||wanted==="kids")return actual.indexOf("kits")===0||actual.indexOf("kids")===0;
- return actual===wanted;
+ return actuals.some(function(actual){
+  if(wanted==="agendas")return actual.indexOf("agendas")===0;
+  if(wanted==="papeleria")return actual.indexOf("papeleria")===0||actual==="tarjetas";
+  if(wanted==="sublimacion")return actual.indexOf("sublimacion")===0;
+  if(wanted==="stickers")return actual.indexOf("stickers")===0;
+  if(wanted==="accesorios")return actual.indexOf("accesorios")===0;
+  if(wanted==="kits"||wanted==="kids")return actual.indexOf("kits")===0||actual.indexOf("kids")===0;
+  if(wanted==="perfecto para regalo"||wanted==="regalos")return actual==="perfecto para regalo"||actual==="regalos";
+  return actual===wanted;
+ });
 }
 function navCategory(x){
  var t=normalizeText(x.target),l=normalizeText(x.label);
