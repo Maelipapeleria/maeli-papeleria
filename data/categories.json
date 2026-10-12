@@ -1,0 +1,52 @@
+{
+  "categories": [
+    {
+      "name": "Agendas",
+      "slug": "agendas",
+      "showInMenu": true,
+      "order": 1
+    },
+    {
+      "name": "Papelería",
+      "slug": "papeleria",
+      "showInMenu": true,
+      "order": 2
+    },
+    {
+      "name": "Accesorios",
+      "slug": "accesorios",
+      "showInMenu": true,
+      "order": 3
+    },
+    {
+      "name": "Sublimación",
+      "slug": "sublimacion",
+      "showInMenu": true,
+      "order": 4
+    },
+    {
+      "name": "Tazas y botellas",
+      "slug": "tazas-botellas",
+      "showInMenu": true,
+      "order": 5
+    },
+    {
+      "name": "Kits",
+      "slug": "kits",
+      "showInMenu": true,
+      "order": 6
+    },
+    {
+      "name": "Disponible en tienda",
+      "slug": "stock",
+      "showInMenu": true,
+      "order": 7
+    },
+    {
+      "name": "Perfecto para regalo",
+      "slug": "regalos",
+      "showInMenu": false,
+      "order": 8
+    }
+  ]
+}
