@@ -683,16 +683,6 @@
     {
       "featured": false,
       "hasQuantity": false,
-      "image": "/assets/uploads/1000174322.png",
-      "name": "Marcapáginas magnéticos ",
-      "category": "Accesorios ",
-      "price": 1000,
-      "id": "Marcapag ",
-      "desc": "Marcapáginas magnéticos "
-    },
-    {
-      "featured": false,
-      "hasQuantity": false,
       "image": "/assets/uploads/1000174789.jpg",
       "name": "Bolígrafo personalizado ",
       "category": "Accesorios ",
@@ -721,12 +711,9 @@
       "id": "Libreta12hojas"
     },
     {
-      "featured": false,
-      "image": "/assets/uploads/img-20261011-wa0021.jpg",
-      "name": "Marcapáginas",
-      "category": "Stock",
       "price": 1000,
-      "id": "Marcapaginasrosa",
+      "name": "Marcapáginas",
+      "featured": false,
       "desc": "Disponible en stock de la tienda para entrega inmediata",
       "designs": [
         {
@@ -774,7 +761,83 @@
           "name": "Marcapáginas diseño argyle verde",
           "price": 1000
         }
-      ]
+      ],
+      "id": "Marcapaginas",
+      "image": "/assets/uploads/img-20261011-wa0021.jpg",
+      "categories": [
+        "Accesorios"
+      ],
+      "category": "Stock "
+    },
+    {
+      "hasQuantity": false,
+      "price": 2000,
+      "name": "Agenda mini",
+      "featured": false,
+      "desc": "Agenda contiene 30 hojas blancas",
+      "designs": [
+        {
+          "image": "/assets/uploads/img-20261012-wa0067.jpg",
+          "name": "Agenda mini Sol & Luna",
+          "price": 2000
+        },
+        {
+          "image": "/assets/uploads/img-20261012-wa0066.jpg",
+          "name": "Agenda mini rayas",
+          "price": 2000
+        },
+        {
+          "image": "/assets/uploads/img-20261012-wa0071.jpg",
+          "name": "Agenda mini color-pink",
+          "price": 2000
+        },
+        {
+          "image": "/assets/uploads/img-20261012-wa0065.jpg",
+          "name": "Agenda mini Mano de Fátima ",
+          "price": 2000
+        },
+        {
+          "name": "Agenda Mini Noche estrellada",
+          "image": "/assets/uploads/img-20261012-wa0068.jpg",
+          "price": 2000
+        }
+      ],
+      "id": "agendaminianillo",
+      "image": "/assets/uploads/img-20261012-wa0094.jpg",
+      "categories": [
+        "Agendas"
+      ],
+      "category": "Stock"
+    },
+    {
+      "hasQuantity": false,
+      "price": 2000,
+      "name": "Destapadores de metal",
+      "featured": false,
+      "desc": "Destapadores de metal. Puedes personalizarlo como quieras.",
+      "designs": [
+        {
+          "image": "/assets/uploads/img-20261012-wa0073.jpg",
+          "name": "Destapador \"Salud en tu dia\"",
+          "price": 2000
+        },
+        {
+          "image": "/assets/uploads/img-20261012-wa0075.jpg",
+          "name": "Destapador \"Arregla todo\"",
+          "price": 2000
+        },
+        {
+          "image": "/assets/uploads/img-20261012-wa0078.jpg",
+          "name": "Destapador \"Rey del asado\"",
+          "price": 2000
+        }
+      ],
+      "id": "Destapadoresmetal",
+      "image": "/assets/uploads/img-20260923-wa0023.jpg",
+      "categories": [
+        "Stock"
+      ],
+      "category": "Accesorios"
     }
   ],
   "agendaExtras": [
