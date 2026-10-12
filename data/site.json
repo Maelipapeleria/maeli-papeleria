@@ -7,28 +7,28 @@
     },
     {
       "label": "AGENDAS",
-      "target": "Agendas",
+      "target": "agendas",
       "active": true
     },
     {
       "label": "PAPELERÍA",
-      "target": "Papelería",
+      "target": "papeleria",
       "active": true
     },
     {
       "label": "ACCESORIOS",
-      "target": "Accesorios",
+      "target": "accesorios",
       "active": true
     },
     {
       "label": "SUBLIMACIÓN",
-      "target": "Sublimación",
+      "target": "sublimacion",
       "active": true
     },
     {
       "active": true,
       "label": "TAZONES Y BOTELLAS",
-      "target": "Tazas y botellas "
+      "target": "tazas-botellas"
     },
     {
       "label": "CELEBRACIONES",
@@ -37,13 +37,13 @@
     },
     {
       "label": "KITS ",
-      "target": "Kits",
+      "target": "kits",
       "active": true
     },
     {
       "active": true,
       "label": "DISPONIBLE EN TIENDA",
-      "target": "Stock"
+      "target": "stock"
     }
   ],
   "homepage": {
