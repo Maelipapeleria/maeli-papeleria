@@ -181,32 +181,29 @@ main{width:100%;margin:0;padding:24px 24px 50px}.sectionHead{display:flex;justif
 <script>
 (function(){
 "use strict";
-var products=[],cart=[],activeCategory="Todos",detailItem=null,stockDesignItems=[],agendaExtras=[],site={navigation:[],homepage:{}};
+var products=[],cart=[],activeCategory="Todos",detailItem=null,stockDesignItems=[],agendaExtras=[],categories=[],site={navigation:[],homepage:{}};
 function normalizeText(s){return String(s==null?"":s).trim().toLowerCase().normalize("NFD").replace(/[\\u0300-\\u036f]/g,"")}
+function categoryKey(value){
+ var actual=normalizeText(value);
+ var found=categories.find(function(c){return normalizeText(c.slug)===actual||normalizeText(c.name)===actual});
+ if(found)return normalizeText(found.slug);
+ if(actual==="tarjetas")return "papeleria";
+ if(actual==="stickers")return "accesorios";
+ if(actual==="disponible en tienda")return "stock";
+ return actual;
+}
 function categoryMatches(p,cat){
- var wanted=normalizeText(cat),values=Array.isArray(p.categories)?p.categories.slice():[];
+ var wanted=categoryKey(cat),values=Array.isArray(p.categories)?p.categories.slice():[];
  if(p.category)values.push(p.category);
- var actuals=values.map(normalizeText).filter(Boolean);
  if(!wanted||wanted==="todos")return true;
- return actuals.some(function(actual){
-  if(wanted==="agendas")return actual.indexOf("agendas")===0;
-  if(wanted==="papeleria")return actual.indexOf("papeleria")===0||actual==="tarjetas";
-  if(wanted==="sublimacion")return actual.indexOf("sublimacion")===0;
-  if(wanted==="stickers")return actual.indexOf("stickers")===0;
-  if(wanted==="accesorios")return actual.indexOf("accesorios")===0;
-  if(wanted==="kits"||wanted==="kids")return actual.indexOf("kits")===0||actual.indexOf("kids")===0;
-  if(wanted==="perfecto para regalo"||wanted==="regalos")return actual==="perfecto para regalo"||actual==="regalos";
-  return actual===wanted;
- });
+ return values.some(function(value){var actual=categoryKey(value);return actual===wanted||actual.indexOf(wanted)===0});
 }
 function navCategory(x){
  var t=normalizeText(x.target),l=normalizeText(x.label);
  if(t==="inicio"||l==="inicio"||t==="banners"||l==="celebraciones")return "";
- if(t==="agendas"||l==="agendas")return "Agendas";
- if(t==="papeleria"||l==="papeleria")return "Papelería";
- if(t==="stickers"||l==="stickers")return "Stickers";
- if(t==="sublimacion"||l==="sublimacion")return "Sublimación";
- if(t==="kits"||t==="kids"||l==="kits"||l==="kids")return "Kits";
+ var found=categories.find(function(c){return normalizeText(c.slug)===t||normalizeText(c.name)===t});
+ if(found)return found.name;
+ if(t==="stock")return "Stock";
  return x.target||"";
 }
 function $(s){return document.querySelector(s)}
@@ -305,8 +302,9 @@ function load(){Promise.all([
  fetch("data/products.json?"+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json()}),
  fetch("data/celebrations.json?"+Date.now()).then(function(r){return r.ok?r.json():{celebrations:[]}}),
  fetch("data/site.json?"+Date.now()).then(function(r){return r.ok?r.json():{navigation:[],homepage:{}}}),
- fetch("data/home-new-products.json?"+Date.now()).then(function(r){return r.ok?r.json():{products:[]}})
- ]).then(function(d){products=d[0].products||[];agendaExtras=d[0].agendaExtras||[];site=d[2]||site;site.homepage=site.homepage||{};site.homepage.homeNewProducts=(d[3].products||site.homepage.homeNewProducts||[]);renderNav();renderHomepage();renderExtraHome();if($("#banners"))$("#banners").style.display=site.homepage?.showCelebrations===false?"none":"";(d[1].celebrations||[]).forEach(function(c){if(!c.active||!c.banner)return;var id=c.id==="celebraciones"?"celebraciones":c.id==="halloween"?"halloween":null;if(id){var el=$("#"+id);el.innerHTML='<img src="'+c.banner+'" alt="'+esc(c.title||c.name)+'">';el.onclick=function(e){e.preventDefault();$("#catalogo").scrollIntoView({behavior:"smooth"})}}});render()}).catch(function(e){console.error(e);render()})}
+ fetch("data/home-new-products.json?"+Date.now()).then(function(r){return r.ok?r.json():{products:[]}}),
+ fetch("data/categories.json?"+Date.now()).then(function(r){return r.ok?r.json():{categories:[]}})
+ ]).then(function(d){products=d[0].products||[];agendaExtras=d[0].agendaExtras||[];site=d[2]||site;categories=(d[4].categories||[]).filter(function(c){return c&&c.slug&&c.name});site.homepage=site.homepage||{};site.homepage.homeNewProducts=(d[3].products||site.homepage.homeNewProducts||[]);renderNav();renderHomepage();renderExtraHome();if($("#banners"))$("#banners").style.display=site.homepage?.showCelebrations===false?"none":"";(d[1].celebrations||[]).forEach(function(c){if(!c.active||!c.banner)return;var id=c.id==="celebraciones"?"celebraciones":c.id==="halloween"?"halloween":null;if(id){var el=$("#"+id);el.innerHTML='<img src="'+c.banner+'" alt="'+esc(c.title||c.name)+'">';el.onclick=function(e){e.preventDefault();$("#catalogo").scrollIntoView({behavior:"smooth"})}}});render()}).catch(function(e){console.error(e);render()})}
 document.addEventListener("click",function(e){var homeNewAction=e.target.closest("[data-home-new-action]"),homeNewCard=e.target.closest("[data-home-new-index]");if(homeNewCard){var idx=Number(homeNewCard.getAttribute("data-home-new-index")),hpItems=site.homepage?.homeNewProducts||[],x=hpItems[idx];if(x){var matching=products.find(function(p){return (p.image&&p.image===x.image)||normalizeText(p.name)===normalizeText(x.title)}),item=matching?Object.assign({},matching,{image:x.image||matching.image,name:x.title||matching.name,price:x.price!==undefined&&x.price!==null&&x.price!==""?Number(x.price):Number(matching.price||0)}):{id:"home-new-"+idx,name:x.title||"Producto nuevo",category:"Nuevos productos",price:Number(x.price||0),image:x.image||"",desc:"Producto destacado de MAELI Papelería."};if(homeNewAction&&homeNewAction.getAttribute("data-home-new-action")==="add"){cart.push(Object.assign({},item,{basePrice:Number(item.price||0),selectedExtras:[]}));$("#count").textContent=cart.length;renderCart();showToast();return}openDetail(item);return}}var stockThumb=e.target.closest("button[data-stock-design]");if(stockThumb){var selectedStock=stockDesignItems.find(function(x){return x.id===stockThumb.getAttribute("data-stock-design")});if(selectedStock){detailItem=selectedStock;$("#detailName").textContent=selectedStock.name;$("#detailPrice").textContent=money(selectedStock.price);$("#detailDesc").textContent=selectedStock.desc||"Producto personalizado.";$("#detailImage").innerHTML=selectedStock.image?'<img src="'+selectedStock.image+'" alt="'+esc(selectedStock.name)+'">':"";[].slice.call($("#stockDesigns").querySelectorAll(".stockDesign")).forEach(function(b){var active=b===stockThumb;b.classList.toggle("active",active);b.setAttribute("aria-pressed",active?"true":"false")});updateDetailPrice(detailItem);}return}var btn=e.target.closest("button[data-action='detail']");if(btn){var c=btn.closest(".card"),id=c&&c.getAttribute("data-product-id"),p=groupByQuantity(products).find(function(x){return x.id===id});if(p)openDetail(p);return}var w=e.target.closest(".wish");if(w){w.textContent=w.textContent==="♡"?"♥":"♡";return}var n=e.target.closest("[data-nav-category]");if(n){var cat=n.getAttribute("data-nav-category")||"Todos";activeCategory=cat;render();if(cat)$("#catalogo").scrollIntoView({behavior:"smooth",block:"start"});return}var rm=e.target.closest("[data-remove]");if(rm){cart.splice(Number(rm.getAttribute("data-remove")),1);$("#count").textContent=cart.length;renderCart();return}var cl=e.target.closest("[data-close]");if(cl)closeModal(cl.getAttribute("data-close"))});
 $("#search").addEventListener("input",function(){activeCategory="Todos";render();if(this.value.trim())$("#catalogo").scrollIntoView({behavior:"smooth",block:"start"})});
 $("#cartBtn").addEventListener("click",function(){openModal("cartOverlay")});
