@@ -20,7 +20,13 @@ collections:
             fields:
               - { label: ID, name: id, widget: string }
               - { label: Nombre, name: name, widget: string }
-              - { label: Categoría, name: category, widget: string }
+              - { label: Categoría principal (compatibilidad), name: category, widget: string, required: false, hint: "Campo antiguo para productos existentes; puedes dejarlo como está." }
+              - label: Categorías
+                name: categories
+                widget: list
+                required: false
+                hint: "Selecciona todas las categorías donde debe aparecer este producto. Puedes agregar varias."
+                field: { label: Categoría, name: category_item, widget: select, options: ["Agendas", "Papelería", "Sublimación", "Accesorios", "Kits", "Perfecto para regalo"] }
               - { label: Precio, name: price, widget: number }
               - { label: Descripción, name: desc, widget: text }
               - { label: Imagen, name: image, widget: image, required: false }
