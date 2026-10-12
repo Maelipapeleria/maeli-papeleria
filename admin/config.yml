@@ -7,6 +7,22 @@ media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
 collections:
+  - name: categorias
+    label: Categorías
+    files:
+      - name: lista
+        label: Administrar categorías
+        file: data/categories.json
+        fields:
+          - label: Categorías
+            name: categories
+            widget: list
+            fields:
+              - { label: Nombre visible, name: name, widget: string }
+              - { label: Identificador permanente, name: slug, widget: string, hint: "No lo cambies al renombrar una categoría; sirve para conservar sus productos." }
+              - { label: Mostrar en el menú, name: showInMenu, widget: boolean, default: true }
+              - { label: Orden, name: order, widget: number, value_type: int, min: 1 }
+
   - name: catalogo
     label: Catálogo
     files:
@@ -25,8 +41,8 @@ collections:
                 name: categories
                 widget: list
                 required: false
-                hint: "Selecciona todas las categorías donde debe aparecer este producto. Puedes agregar varias."
-                field: { label: Categoría, name: category_item, widget: select, options: ["Agendas", "Papelería", "Sublimación", "Accesorios", "Kits", "Perfecto para regalo"] }
+                hint: "Agrega una categoría por fila. Usa el nombre o identificador de la categoría del panel Categorías."
+                field: { label: Categoría, name: category_item, widget: string }
               - { label: Precio, name: price, widget: number }
               - { label: Descripción, name: desc, widget: text }
               - { label: Imagen, name: image, widget: image, required: false }
