@@ -723,7 +723,7 @@
     {
       "featured": false,
       "image": "/assets/uploads/img-20261011-wa0021.jpg",
-      "name": "Marcapáginas Rosa",
+      "name": "Marcapáginas",
       "category": "Stock",
       "price": 1000,
       "id": "Marcapaginasrosa",
@@ -747,6 +747,31 @@
         {
           "image": "/assets/uploads/1000174146.png",
           "name": "Marcapáginas Fantasmas Naranja ",
+          "price": 1000
+        },
+        {
+          "image": "/assets/uploads/img-20261012-wa0064.jpg",
+          "name": "Marcapáginas cuadrille verde",
+          "price": 1000
+        },
+        {
+          "image": "/assets/uploads/img-20261012-wa0070.jpg",
+          "name": "Marcapáginas fuccia wavy",
+          "price": 1000
+        },
+        {
+          "image": "/assets/uploads/img-20261012-wa0085.jpg",
+          "name": "Marcapáginas marmoleado rosa",
+          "price": 1000
+        },
+        {
+          "image": "/assets/uploads/img-20261012-wa0077.jpg",
+          "name": "Marcapáginas mini calabazas naranjo",
+          "price": 1000
+        },
+        {
+          "image": "/assets/uploads/img-20261012-wa0069.jpg",
+          "name": "Marcapáginas diseño argyle verde",
           "price": 1000
         }
       ]
