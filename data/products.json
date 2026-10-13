@@ -54,7 +54,7 @@
       "id": "agenda-profesional",
       "name": "Agenda profesional",
       "category": "Agendas ",
-      "price": 12000,
+      "price": 14000,
       "desc": " ¿Qué incluye?\n📅 Planificador anual para visualizar y organizar todo el año.\n🗓️ Calendarios mensuales para planificar reuniones, fechas importantes y actividades.\n⏰ Planificación de horarios y turnos, ideal para profesionales que trabajan por turnos.\n🏥 Espacio para recepción y entrega de turnos, especialmente útil para enfermeras, TENS y personal de salud.\n📚 Horario de clases, perfecto para profesores, estudiantes y profesionales de la educación.\n📝 Espacio para anotaciones y pendientes.\n🎯 Secciones para organizar tareas, metas y actividades profesionales.\n📋 Diferentes espacios pensados para llevar un mejor control de las responsabilidades del día a día.\n💼 Una agenda versátil y completamente personalizable, que puedes adaptar a tu profesión, rutina y forma de trabajar.\nIdeal para profesionales de la salud, educación, administración, emprendimientos y muchas otras áreas",
       "image": "/assets/uploads/ererer.jpeg",
       "featured": true,
@@ -711,6 +711,7 @@
       "id": "Libreta12hojas"
     },
     {
+      "hasQuantity": false,
       "price": 1000,
       "name": "Marcapáginas",
       "featured": false,
