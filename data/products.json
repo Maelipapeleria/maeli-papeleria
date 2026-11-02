@@ -482,15 +482,15 @@
     },
     {
       "hasQuantity": true,
-      "price": 8000,
+      "price": 6500,
       "quantities": [
         {
           "label": "50 unid",
-          "price": 8000
+          "price": 6800
         },
         {
           "label": "100 unid",
-          "price": 16000
+          "price": 13600
         }
       ],
       "name": "Tarjeta fidelidad 1 cara + 200 stickers · ",
